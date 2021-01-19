@@ -1,0 +1,125 @@
+{
+    "id": "approvalform",
+    "schemaVersion": "1.1.0",
+    "name": "approvalform",
+    "revision": "1.0",
+    "type": "task",
+    "readOnly": false,
+    "content": [
+        {
+            "id": "first_name",
+            "type": "string",
+            "label": "First Name",
+            "readOnly": false,
+            "value": "${context.empData.firstName}",
+            "constraints": {
+                "required": false
+            }
+        },
+        {
+            "id": "last_name",
+            "type": "string",
+            "label": "Last Name",
+            "readOnly": false,
+            "value": "${context.empData.lastName}",
+            "constraints": {
+                "required": false
+            }
+        },
+        {
+            "id": "country_",
+            "type": "string",
+            "label": "Country",
+            "readOnly": false,
+            "value": "${context.empData.country}",
+            "constraints": {
+                "required": false
+            }
+        },
+        {
+            "id": "hire_date",
+            "type": "date",
+            "label": "Hire Date",
+            "readOnly": false,
+            "value": "${context.empData.hireDate}",
+            "constraints": {
+                "required": false
+            }
+        },
+        {
+            "id": "job_title",
+            "type": "string",
+            "label": "Job Title",
+            "readOnly": false,
+            "value": "${context.empData.jobTitle}",
+            "constraints": {
+                "required": false
+            }
+        },
+        {
+            "id": "relocation",
+            "type": "string",
+            "label": "Relocation",
+            "readOnly": false,
+            "value": "${context.empData.relocation}",
+            "control": {
+                "type": "RadioButtons",
+                "properties": {
+                    "items": [
+                        {
+                            "value": "yes",
+                            "displayValue": "yes"
+                        },
+                        {
+                            "value": "no",
+                            "displayValue": "no"
+                        }
+                    ]
+                }
+            },
+            "constraints": {
+                "required": true,
+                "enum": [
+                    "yes",
+                    "no"
+                ]
+            }
+        },
+        {
+            "id": "equipment",
+            "type": "string",
+            "label": "Equipment",
+            "readOnly": false,
+            "value": "${context.empData.equipment}",
+            "control": {
+                "type": "Dropdown",
+                "properties": {
+                    "items": [
+                        {
+                            "value": "Notebook",
+                            "displayValue": "Notebook"
+                        },
+                        {
+                            "value": "Cables and Accessories",
+                            "displayValue": "Cables and Accessories"
+                        }
+                    ]
+                }
+            },
+            "constraints": {
+                "required": true,
+                "enum": [
+                    "Notebook",
+                    "Cables and Accessories"
+                ]
+            }
+        }
+    ],
+    "decisions": [
+        {
+            "id": "approve",
+            "text": "Approve",
+            "decisionType": "positive"
+        }
+    ]
+}

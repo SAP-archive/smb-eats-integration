@@ -1,0 +1,78 @@
+{
+    "id": "onboardingapprovalform",
+    "schemaVersion": "1.1.0",
+    "name": "onboardingapprovalform",
+    "revision": "1.0",
+    "type": "start",
+    "readOnly": false,
+    "content": [
+        {
+            "id": "first_name",
+            "type": "string",
+            "label": "First Name",
+            "readOnly": false,
+            "value": "${context.empData.firstName}",
+            "constraints": {
+                "required": false
+            }
+        },
+        {
+            "id": "last_name",
+            "type": "string",
+            "label": "Last Name",
+            "readOnly": false,
+            "value": "${context.empData.lastName}",
+            "constraints": {
+                "required": false
+            }
+        },
+        {
+            "id": "country",
+            "type": "string",
+            "label": "Country",
+            "readOnly": false,
+            "value": "${context.empData.country}",
+            "constraints": {
+                "required": false
+            }
+        },
+        {
+            "id": "hire_date",
+            "type": "date",
+            "label": "Hire Date",
+            "readOnly": false,
+            "value": "${context.empData.hireDate}",
+            "constraints": {
+                "required": false
+            }
+        },
+        {
+            "id": "job_title",
+            "type": "string",
+            "label": "Job Title",
+            "readOnly": false,
+            "value": "${context.empData.jobTitle}",
+            "constraints": {
+                "required": false
+            }
+        },
+        {
+            "id": "teste",
+            "type": "string",
+            "label": "teste",
+            "readOnly": false,
+            "value": "${context.oqueeuquiser.vaifio}",
+            "constraints": {
+                "required": false
+            }
+        }
+    ],
+    "actions": [
+        {
+            "id": "action1",
+            "text": "Start Approval",
+            "workflowDefinitionId": "onboard",
+            "workflowPath": ""
+        }
+    ]
+}

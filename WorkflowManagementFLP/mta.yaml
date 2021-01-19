@@ -1,0 +1,77 @@
+ID: WorkflowManagementFLP
+_schema-version: '2.1'
+parameters:
+  deploy_mode: html5-repo
+version: 0.0.1
+modules:
+  - name: WorkflowManagementFLP_appRouter
+    type: approuter.nodejs
+    path: WorkflowManagementFLP_appRouter
+    parameters:
+      disk-quota: 256M
+      memory: 256M
+    requires:
+      - name: WorkflowManagementFLP_html5_repo_runtime
+      - name: uaa_workflowmanagement
+      - name: wm_workflow
+      - name: wm_processvisibility
+      - name: wm_businessrules
+      - name: wm_workflowmanagement
+      - name: default_portal
+  - name: WFMFLP
+    type: com.sap.application.content
+    path: WFMFLP
+    parameters: 
+      stack: cflinuxfs3
+      memory: 128M
+      buildpack: 'https://github.com/cloudfoundry/nodejs-buildpack/releases/download/v1.6.39/nodejs-buildpack-cflinuxfs3-v1.6.39.zip'
+    requires:
+      - name: uaa_workflowmanagement
+      - name: wm_workflow
+      - name: wm_processvisibility
+      - name: wm_businessrules
+      - name: wm_workflowmanagement
+      - name: default_portal
+        parameters:
+          content-target: true
+          service-key:
+            config:
+              content-endpoint: developer
+            name: content-deploy-key
+resources:
+  - name: WorkflowManagementFLP_html5_repo_runtime
+    parameters:
+      service-plan: app-runtime
+      service: html5-apps-repo
+    type: org.cloudfoundry.managed-service
+  - name: uaa_workflowmanagement
+    parameters:
+      path: ./xs-security.json
+      service-plan: application
+      service: xsuaa
+    type: org.cloudfoundry.managed-service
+  - name: default_portal
+    parameters:
+      service-plan: standard
+      service: portal
+    type: org.cloudfoundry.managed-service
+  - name: wm_processvisibility
+    parameters:
+      service-plan: lite
+      service: processvisibility
+    type: org.cloudfoundry.existing-service
+  - name: wm_workflow
+    parameters:
+      service-plan: lite
+      service: workflow
+    type: org.cloudfoundry.existing-service
+  - name: wm_businessrules
+    parameters:
+      service-plan: lite
+      service: business-rules
+    type: org.cloudfoundry.existing-service
+  - name: wm_workflowmanagement
+    parameters:
+      service-plan: lite
+      service: business-rules
+    type: org.cloudfoundry.existing-service
