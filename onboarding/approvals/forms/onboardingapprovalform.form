@@ -29,39 +29,29 @@
         {
             "id": "country",
             "type": "string",
-            "label": "Country",
+            "label": "Address",
             "readOnly": false,
-            "value": "${context.empData.country}",
+            "value": "${context.empData.fullAddress}",
             "constraints": {
                 "required": false
             }
         },
         {
             "id": "hire_date",
-            "type": "date",
-            "label": "Hire Date",
+            "type": "integer",
+            "label": "Meal Code",
             "readOnly": false,
-            "value": "${context.empData.hireDate}",
+            "value": "${context.empData.mealCode}",
             "constraints": {
                 "required": false
             }
         },
         {
             "id": "job_title",
-            "type": "string",
-            "label": "Job Title",
+            "type": "datetime",
+            "label": "Date",
             "readOnly": false,
-            "value": "${context.empData.jobTitle}",
-            "constraints": {
-                "required": false
-            }
-        },
-        {
-            "id": "teste",
-            "type": "string",
-            "label": "teste",
-            "readOnly": false,
-            "value": "${context.oqueeuquiser.vaifio}",
+            "value": "${context.empData.orderDate}",
             "constraints": {
                 "required": false
             }

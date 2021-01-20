@@ -29,89 +29,31 @@
         {
             "id": "country_",
             "type": "string",
-            "label": "Country",
+            "label": "Address",
             "readOnly": false,
-            "value": "${context.empData.country}",
+            "value": "${context.empData.fullAddress}",
             "constraints": {
                 "required": false
             }
         },
         {
             "id": "hire_date",
-            "type": "date",
-            "label": "Hire Date",
+            "type": "integer",
+            "label": "Meal Code",
             "readOnly": false,
-            "value": "${context.empData.hireDate}",
+            "value": "${context.empData.mealCode}",
             "constraints": {
                 "required": false
             }
         },
         {
             "id": "job_title",
-            "type": "string",
-            "label": "Job Title",
+            "type": "datetime",
+            "label": "Date",
             "readOnly": false,
-            "value": "${context.empData.jobTitle}",
+            "value": "${context.empData.orderDate}",
             "constraints": {
                 "required": false
-            }
-        },
-        {
-            "id": "relocation",
-            "type": "string",
-            "label": "Relocation",
-            "readOnly": false,
-            "value": "${context.empData.relocation}",
-            "control": {
-                "type": "RadioButtons",
-                "properties": {
-                    "items": [
-                        {
-                            "value": "yes",
-                            "displayValue": "yes"
-                        },
-                        {
-                            "value": "no",
-                            "displayValue": "no"
-                        }
-                    ]
-                }
-            },
-            "constraints": {
-                "required": true,
-                "enum": [
-                    "yes",
-                    "no"
-                ]
-            }
-        },
-        {
-            "id": "equipment",
-            "type": "string",
-            "label": "Equipment",
-            "readOnly": false,
-            "value": "${context.empData.equipment}",
-            "control": {
-                "type": "Dropdown",
-                "properties": {
-                    "items": [
-                        {
-                            "value": "Notebook",
-                            "displayValue": "Notebook"
-                        },
-                        {
-                            "value": "Cables and Accessories",
-                            "displayValue": "Cables and Accessories"
-                        }
-                    ]
-                }
-            },
-            "constraints": {
-                "required": true,
-                "enum": [
-                    "Notebook",
-                    "Cables and Accessories"
-                ]
             }
         }
     ],
