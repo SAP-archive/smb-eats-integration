@@ -6,7 +6,7 @@
 			"subject": "onboard",
 			"customAttributes": [],
 			"name": "onboard",
-			"documentation": "my first workflow",
+			"documentation": "ByD Eats Prototype Workflow",
 			"lastIds": "62d7f4ed-4063-4c44-af8b-39050bd44926",
 			"events": {
 				"11a9b5ee-17c0-4159-9bbf-454dcfdcd5c3": {
