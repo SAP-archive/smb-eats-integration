@@ -4,6 +4,7 @@
 			"classDefinition": "com.sap.bpm.wfs.Model",
 			"id": "onboard",
 			"subject": "onboard",
+			"customAttributes": [],
 			"name": "onboard",
 			"documentation": "my first workflow",
 			"lastIds": "62d7f4ed-4063-4c44-af8b-39050bd44926",
@@ -19,9 +20,6 @@
 				"f7343211-7e7b-45c3-bda6-50d2cd659b81": {
 					"name": "Approve Meal Order"
 				},
-				"359b5333-ed0d-4b88-b7bb-f505703ee3fb": {
-					"name": "Acknowledge and Start Cooking"
-				},
 				"dbcd0575-f1b3-44f8-826a-0cc6f3e712f6": {
 					"name": "Ready for pick-up"
 				},
@@ -30,6 +28,15 @@
 				},
 				"722d42e0-3ec7-4314-bf98-47544347f724": {
 					"name": "Delivered"
+				},
+				"d5515bc0-4169-40cc-ad33-af1254c0ac47": {
+					"name": "ParallelGateway1"
+				},
+				"27588e98-67d0-41a0-95c3-cb0875ce87ff": {
+					"name": "ServiceTask1"
+				},
+				"4fe60708-abce-4ce7-b001-23d7ebd7a639": {
+					"name": "ServiceTask2"
 				}
 			},
 			"sequenceFlows": {
@@ -39,9 +46,6 @@
 				"aab50a70-0551-447f-82fe-c4bac930205d": {
 					"name": "SequenceFlow2"
 				},
-				"09f9436c-213e-424b-b514-41f004fb9a0e": {
-					"name": "SequenceFlow4"
-				},
 				"49dfa177-b55e-4520-82de-948ded6d97e5": {
 					"name": "SequenceFlow5"
 				},
@@ -50,6 +54,15 @@
 				},
 				"68dd3b8a-c7ab-4f5b-bdf0-ae808d0831c0": {
 					"name": "SequenceFlow7"
+				},
+				"273005ea-636c-4325-bc6b-5e304a7a3272": {
+					"name": "SequenceFlow8"
+				},
+				"3e25df4a-82c5-4ed8-92cf-5f41852230ca": {
+					"name": "SequenceFlow10"
+				},
+				"73a7e10b-1afa-46b1-96d4-38a6304d0690": {
+					"name": "SequenceFlow12"
 				}
 			},
 			"diagrams": {
@@ -73,7 +86,7 @@
 			"priority": "MEDIUM",
 			"isHiddenInLogForParticipant": false,
 			"userInterface": "sapui5://comsapbpmworkflow.comsapbpmwusformplayer/com.sap.bpm.wus.form.player",
-			"recipientUsers": "${info.startedBy}",
+			"recipientUsers": "thiago.de.castro.mendes@sap.com",
 			"formReference": "/forms/onboard/approvalform.form",
 			"userInterfaceParams": [{
 				"key": "formId",
@@ -83,25 +96,8 @@
 				"value": "1.0"
 			}],
 			"id": "usertask1",
-			"name": "Approve Meal Order"
-		},
-		"359b5333-ed0d-4b88-b7bb-f505703ee3fb": {
-			"classDefinition": "com.sap.bpm.wfs.UserTask",
-			"subject": "Kitchen acknowledgement and starts cooking",
-			"priority": "HIGH",
-			"isHiddenInLogForParticipant": false,
-			"userInterface": "sapui5://comsapbpmworkflow.comsapbpmwusformplayer/com.sap.bpm.wus.form.player",
-			"recipientUsers": "ralph.oliveira@sap.com",
-			"formReference": "/forms/onboard/approvalform.form",
-			"userInterfaceParams": [{
-				"key": "formId",
-				"value": "approvalform"
-			}, {
-				"key": "formRevision",
-				"value": "1.0"
-			}],
-			"id": "usertask3",
-			"name": "Acknowledge and Start Cooking"
+			"name": "Approve Meal Order",
+			"documentation": "An agent (usually the restaurant manager) needs to approve the customer's meal request."
 		},
 		"dbcd0575-f1b3-44f8-826a-0cc6f3e712f6": {
 			"classDefinition": "com.sap.bpm.wfs.UserTask",
@@ -109,7 +105,7 @@
 			"priority": "MEDIUM",
 			"isHiddenInLogForParticipant": false,
 			"userInterface": "sapui5://comsapbpmworkflow.comsapbpmwusformplayer/com.sap.bpm.wus.form.player",
-			"recipientUsers": "${info.startedBy}",
+			"recipientUsers": "kitchen",
 			"formReference": "/forms/onboard/approvalform.form",
 			"userInterfaceParams": [{
 				"key": "formId",
@@ -119,7 +115,8 @@
 				"value": "1.0"
 			}],
 			"id": "usertask4",
-			"name": "Ready for pick-up"
+			"name": "Ready for pick-up",
+			"documentation": "It's the time for the kitchen to approve the delivery, meaning the meal is ready for pick-up."
 		},
 		"172b80e4-ae00-49ac-9adb-d630176d70ae": {
 			"classDefinition": "com.sap.bpm.wfs.UserTask",
@@ -127,7 +124,7 @@
 			"priority": "MEDIUM",
 			"isHiddenInLogForParticipant": false,
 			"userInterface": "sapui5://comsapbpmworkflow.comsapbpmwusformplayer/com.sap.bpm.wus.form.player",
-			"recipientUsers": "${info.startedBy}",
+			"recipientUsers": "rider",
 			"formReference": "/forms/onboard/approvalform.form",
 			"userInterfaceParams": [{
 				"key": "formId",
@@ -137,7 +134,8 @@
 				"value": "1.0"
 			}],
 			"id": "usertask5",
-			"name": "Acknowledge and Start Delivery"
+			"name": "Acknowledge and Start Delivery",
+			"documentation": "A rider accepts the delivery and starts the journey."
 		},
 		"722d42e0-3ec7-4314-bf98-47544347f724": {
 			"classDefinition": "com.sap.bpm.wfs.UserTask",
@@ -145,7 +143,7 @@
 			"priority": "MEDIUM",
 			"isHiddenInLogForParticipant": false,
 			"userInterface": "sapui5://comsapbpmworkflow.comsapbpmwusformplayer/com.sap.bpm.wus.form.player",
-			"recipientUsers": "${info.startedBy}",
+			"recipientUsers": "rider",
 			"formReference": "/forms/onboard/approvalform.form",
 			"userInterfaceParams": [{
 				"key": "formId",
@@ -155,7 +153,25 @@
 				"value": "1.0"
 			}],
 			"id": "usertask6",
-			"name": "Delivered"
+			"name": "Delivered",
+			"documentation": "Rider finishes the trip and customer already got the meal. Delivery is done."
+		},
+		"d5515bc0-4169-40cc-ad33-af1254c0ac47": {
+			"classDefinition": "com.sap.bpm.wfs.ParallelGateway",
+			"id": "parallelgateway1",
+			"name": "ParallelGateway1"
+		},
+		"27588e98-67d0-41a0-95c3-cb0875ce87ff": {
+			"classDefinition": "com.sap.bpm.wfs.ServiceTask",
+			"httpMethod": "POST",
+			"id": "servicetask1",
+			"name": "ServiceTask1"
+		},
+		"4fe60708-abce-4ce7-b001-23d7ebd7a639": {
+			"classDefinition": "com.sap.bpm.wfs.ServiceTask",
+			"httpMethod": "POST",
+			"id": "servicetask2",
+			"name": "ServiceTask2"
 		},
 		"c6b99f32-5fe6-4ab6-b60a-80fba1b9ae0f": {
 			"classDefinition": "com.sap.bpm.wfs.SequenceFlow",
@@ -169,14 +185,7 @@
 			"id": "sequenceflow2",
 			"name": "SequenceFlow2",
 			"sourceRef": "f7343211-7e7b-45c3-bda6-50d2cd659b81",
-			"targetRef": "359b5333-ed0d-4b88-b7bb-f505703ee3fb"
-		},
-		"09f9436c-213e-424b-b514-41f004fb9a0e": {
-			"classDefinition": "com.sap.bpm.wfs.SequenceFlow",
-			"id": "sequenceflow4",
-			"name": "SequenceFlow4",
-			"sourceRef": "359b5333-ed0d-4b88-b7bb-f505703ee3fb",
-			"targetRef": "dbcd0575-f1b3-44f8-826a-0cc6f3e712f6"
+			"targetRef": "d5515bc0-4169-40cc-ad33-af1254c0ac47"
 		},
 		"49dfa177-b55e-4520-82de-948ded6d97e5": {
 			"classDefinition": "com.sap.bpm.wfs.SequenceFlow",
@@ -197,6 +206,27 @@
 			"id": "sequenceflow7",
 			"name": "SequenceFlow7",
 			"sourceRef": "722d42e0-3ec7-4314-bf98-47544347f724",
+			"targetRef": "4fe60708-abce-4ce7-b001-23d7ebd7a639"
+		},
+		"273005ea-636c-4325-bc6b-5e304a7a3272": {
+			"classDefinition": "com.sap.bpm.wfs.SequenceFlow",
+			"id": "sequenceflow8",
+			"name": "SequenceFlow8",
+			"sourceRef": "d5515bc0-4169-40cc-ad33-af1254c0ac47",
+			"targetRef": "27588e98-67d0-41a0-95c3-cb0875ce87ff"
+		},
+		"3e25df4a-82c5-4ed8-92cf-5f41852230ca": {
+			"classDefinition": "com.sap.bpm.wfs.SequenceFlow",
+			"id": "sequenceflow10",
+			"name": "SequenceFlow10",
+			"sourceRef": "d5515bc0-4169-40cc-ad33-af1254c0ac47",
+			"targetRef": "dbcd0575-f1b3-44f8-826a-0cc6f3e712f6"
+		},
+		"73a7e10b-1afa-46b1-96d4-38a6304d0690": {
+			"classDefinition": "com.sap.bpm.wfs.SequenceFlow",
+			"id": "sequenceflow12",
+			"name": "SequenceFlow12",
+			"sourceRef": "4fe60708-abce-4ce7-b001-23d7ebd7a639",
 			"targetRef": "2798f4e7-bc42-4fad-a248-159095a2f40a"
 		},
 		"42fa7a2d-c526-4a02-b3ba-49b5168ba644": {
@@ -207,14 +237,18 @@
 				"6bb141da-d485-4317-93b8-e17711df4c32": {},
 				"42b6c7f1-d64b-4772-93c5-a56ea0222cca": {},
 				"ad166062-7def-400f-abc9-7ad1620675da": {},
-				"e0958ec5-da7d-4746-9f10-7a053fad791a": {},
-				"4719a762-16fc-40d4-a659-b763f7f5cbe7": {},
 				"dc56ad04-fdc4-4527-a654-85a5e7b075af": {},
 				"a214ed32-0446-420f-9aaa-fdfe65d54183": {},
 				"8a7a4ec2-7cdb-410b-9193-98f5fb069ad8": {},
 				"62488257-f2cc-4f4b-bed1-ce6fcb16e4d1": {},
 				"cb874991-bee5-45be-a234-6b4b1f4e85ca": {},
-				"4af31a70-a01b-4f9a-8c14-45b15bed489e": {}
+				"4af31a70-a01b-4f9a-8c14-45b15bed489e": {},
+				"c245e7aa-6ab5-4374-8d64-7045113adf63": {},
+				"d3ba70e8-2be2-4ddd-b070-52f54a56c35c": {},
+				"0b775856-43cf-473e-8350-7c4d2ef2c5f0": {},
+				"04c6f4e2-b19d-4b55-a21e-bd6fb774a25e": {},
+				"41406917-b983-4602-b47a-77940b4644eb": {},
+				"c4399bfb-294a-494a-9248-deff15514d53": {}
 			}
 		},
 		"df898b52-91e1-4778-baad-2ad9a261d30e": {
@@ -227,8 +261,8 @@
 		},
 		"53e54950-7757-4161-82c9-afa7e86cff2c": {
 			"classDefinition": "com.sap.bpm.wfs.ui.EndEventSymbol",
-			"x": 1001,
-			"y": 100,
+			"x": 1091,
+			"y": 106,
 			"width": 35,
 			"height": 35,
 			"object": "2798f4e7-bc42-4fad-a248-159095a2f40a"
@@ -250,29 +284,14 @@
 		},
 		"ad166062-7def-400f-abc9-7ad1620675da": {
 			"classDefinition": "com.sap.bpm.wfs.ui.SequenceFlowSymbol",
-			"points": "230,118 390,118",
+			"points": "230,118 310,118",
 			"sourceSymbol": "42b6c7f1-d64b-4772-93c5-a56ea0222cca",
-			"targetSymbol": "e0958ec5-da7d-4746-9f10-7a053fad791a",
+			"targetSymbol": "c245e7aa-6ab5-4374-8d64-7045113adf63",
 			"object": "aab50a70-0551-447f-82fe-c4bac930205d"
-		},
-		"e0958ec5-da7d-4746-9f10-7a053fad791a": {
-			"classDefinition": "com.sap.bpm.wfs.ui.UserTaskSymbol",
-			"x": 340,
-			"y": 88,
-			"width": 100,
-			"height": 60,
-			"object": "359b5333-ed0d-4b88-b7bb-f505703ee3fb"
-		},
-		"4719a762-16fc-40d4-a659-b763f7f5cbe7": {
-			"classDefinition": "com.sap.bpm.wfs.ui.SequenceFlowSymbol",
-			"points": "390,118 552,118",
-			"sourceSymbol": "e0958ec5-da7d-4746-9f10-7a053fad791a",
-			"targetSymbol": "dc56ad04-fdc4-4527-a654-85a5e7b075af",
-			"object": "09f9436c-213e-424b-b514-41f004fb9a0e"
 		},
 		"dc56ad04-fdc4-4527-a654-85a5e7b075af": {
 			"classDefinition": "com.sap.bpm.wfs.ui.UserTaskSymbol",
-			"x": 502,
+			"x": 395,
 			"y": 88,
 			"width": 100,
 			"height": 60,
@@ -280,7 +299,7 @@
 		},
 		"a214ed32-0446-420f-9aaa-fdfe65d54183": {
 			"classDefinition": "com.sap.bpm.wfs.ui.SequenceFlowSymbol",
-			"points": "552,118 726,118",
+			"points": "445,118 726,118",
 			"sourceSymbol": "dc56ad04-fdc4-4527-a654-85a5e7b075af",
 			"targetSymbol": "8a7a4ec2-7cdb-410b-9193-98f5fb069ad8",
 			"object": "49dfa177-b55e-4520-82de-948ded6d97e5"
@@ -310,17 +329,63 @@
 		},
 		"4af31a70-a01b-4f9a-8c14-45b15bed489e": {
 			"classDefinition": "com.sap.bpm.wfs.ui.SequenceFlowSymbol",
-			"points": "873,117.75 1018.5,117.75",
+			"points": "873,117.875 996.25,117.875",
 			"sourceSymbol": "cb874991-bee5-45be-a234-6b4b1f4e85ca",
-			"targetSymbol": "53e54950-7757-4161-82c9-afa7e86cff2c",
+			"targetSymbol": "41406917-b983-4602-b47a-77940b4644eb",
 			"object": "68dd3b8a-c7ab-4f5b-bdf0-ae808d0831c0"
+		},
+		"c245e7aa-6ab5-4374-8d64-7045113adf63": {
+			"classDefinition": "com.sap.bpm.wfs.ui.ParallelGatewaySymbol",
+			"x": 289,
+			"y": 97,
+			"object": "d5515bc0-4169-40cc-ad33-af1254c0ac47"
+		},
+		"d3ba70e8-2be2-4ddd-b070-52f54a56c35c": {
+			"classDefinition": "com.sap.bpm.wfs.ui.SequenceFlowSymbol",
+			"points": "310,118 310,181.5 331.25,181.5 331.25,254",
+			"sourceSymbol": "c245e7aa-6ab5-4374-8d64-7045113adf63",
+			"targetSymbol": "0b775856-43cf-473e-8350-7c4d2ef2c5f0",
+			"object": "273005ea-636c-4325-bc6b-5e304a7a3272"
+		},
+		"0b775856-43cf-473e-8350-7c4d2ef2c5f0": {
+			"classDefinition": "com.sap.bpm.wfs.ui.ServiceTaskSymbol",
+			"x": 281.25,
+			"y": 224,
+			"width": 100,
+			"height": 60,
+			"object": "27588e98-67d0-41a0-95c3-cb0875ce87ff"
+		},
+		"04c6f4e2-b19d-4b55-a21e-bd6fb774a25e": {
+			"classDefinition": "com.sap.bpm.wfs.ui.SequenceFlowSymbol",
+			"points": "310,118 445,118",
+			"sourceSymbol": "c245e7aa-6ab5-4374-8d64-7045113adf63",
+			"targetSymbol": "dc56ad04-fdc4-4527-a654-85a5e7b075af",
+			"object": "3e25df4a-82c5-4ed8-92cf-5f41852230ca"
+		},
+		"41406917-b983-4602-b47a-77940b4644eb": {
+			"classDefinition": "com.sap.bpm.wfs.ui.ServiceTaskSymbol",
+			"x": 946.25,
+			"y": 87.75,
+			"width": 100,
+			"height": 60,
+			"object": "4fe60708-abce-4ce7-b001-23d7ebd7a639"
+		},
+		"c4399bfb-294a-494a-9248-deff15514d53": {
+			"classDefinition": "com.sap.bpm.wfs.ui.SequenceFlowSymbol",
+			"points": "996.25,120.625 1108.5,120.625",
+			"sourceSymbol": "41406917-b983-4602-b47a-77940b4644eb",
+			"targetSymbol": "53e54950-7757-4161-82c9-afa7e86cff2c",
+			"object": "73a7e10b-1afa-46b1-96d4-38a6304d0690"
 		},
 		"62d7f4ed-4063-4c44-af8b-39050bd44926": {
 			"classDefinition": "com.sap.bpm.wfs.LastIDs",
-			"sequenceflow": 7,
+			"sequenceflow": 12,
 			"startevent": 1,
 			"endevent": 1,
-			"usertask": 6
+			"usertask": 6,
+			"servicetask": 2,
+			"scripttask": 1,
+			"parallelgateway": 2
 		}
 	}
 }
