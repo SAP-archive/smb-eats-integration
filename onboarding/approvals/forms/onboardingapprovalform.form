@@ -7,53 +7,33 @@
     "readOnly": false,
     "content": [
         {
-            "id": "first_name",
+            "id": "CustomerName",
             "type": "string",
-            "label": "First Name",
+            "label": "Customer Name",
             "readOnly": false,
-            "value": "${context.empData.firstName}",
+            "value": "${context.orderData.CustomerName}",
             "constraints": {
                 "required": false
             }
         },
         {
-            "id": "last_name",
-            "type": "string",
-            "label": "Last Name",
-            "readOnly": false,
-            "value": "${context.empData.lastName}",
-            "constraints": {
-                "required": false
-            }
-        },
-        {
-            "id": "country",
+            "id": "Address",
             "type": "string",
             "label": "Address",
             "readOnly": false,
-            "value": "${context.empData.fullAddress}",
+            "value": "${context.orderData.Address}",
             "constraints": {
                 "required": false
             }
         },
         {
-            "id": "hire_date",
-            "type": "integer",
-            "label": "Meal Code",
+            "id": "ProductID",
+            "type": "string",
+            "label": "Product ID",
             "readOnly": false,
-            "value": "${context.empData.mealCode}",
+            "value": "${context.orderData.ProductID}",
             "constraints": {
-                "required": false
-            }
-        },
-        {
-            "id": "job_title",
-            "type": "datetime",
-            "label": "Date",
-            "readOnly": false,
-            "value": "${context.empData.orderDate}",
-            "constraints": {
-                "required": false
+                "required": true
             }
         }
     ],
