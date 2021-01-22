@@ -156,8 +156,9 @@
 		"27588e98-67d0-41a0-95c3-cb0875ce87ff": {
 			"classDefinition": "com.sap.bpm.wfs.ServiceTask",
 			"destination": "CPI_SA",
-			"path": "/ByDSalesOrders",
-			"httpMethod": "GET",
+			"path": "/PostByDSalesOrder",
+			"httpMethod": "POST",
+			"requestVariable": "${context.orderData}",
 			"responseVariable": "",
 			"id": "servicetask1",
 			"name": "Create SO in the core ERP",
