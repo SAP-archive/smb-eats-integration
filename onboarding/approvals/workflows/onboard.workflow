@@ -78,12 +78,12 @@
 		},
 		"f7343211-7e7b-45c3-bda6-50d2cd659b81": {
 			"classDefinition": "com.sap.bpm.wfs.UserTask",
-			"subject": "Assign and Approve Equipment for ${context.empData.firstName} ${context.empData.lastName}",
-			"description": "The manager assigns and approves equipment and relocation of the newly onboarded employee",
+			"subject": "Approve Meal Request for ${context.orderData.CustomerName}",
+			"description": "The agent (usually the restaurant manager) approves the customer's meal request so the kitchen can start preparing it.",
 			"priority": "MEDIUM",
 			"isHiddenInLogForParticipant": false,
 			"userInterface": "sapui5://comsapbpmworkflow.comsapbpmwusformplayer/com.sap.bpm.wus.form.player",
-			"recipientUsers": "thiago.de.castro.mendes@sap.com",
+			"recipientUsers": "${context.recipient}",
 			"formReference": "/forms/onboard/approvalform.form",
 			"userInterfaceParams": [{
 				"key": "formId",
