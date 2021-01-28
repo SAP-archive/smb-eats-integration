@@ -17,6 +17,16 @@
             }
         },
         {
+            "id": "customer_e_mail",
+            "type": "string",
+            "label": "Customer E-mail",
+            "readOnly": false,
+            "value": "${context.orderData.CustomerEmail}",
+            "constraints": {
+                "required": false
+            }
+        },
+        {
             "id": "Address",
             "type": "string",
             "label": "Address",

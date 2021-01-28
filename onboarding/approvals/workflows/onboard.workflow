@@ -34,6 +34,9 @@
 				},
 				"6cce5d66-1275-415e-80f2-51350c73ec63": {
 					"name": "Create Customer Invoice in the core ERP"
+				},
+				"2b7f9cf0-32ce-4e3c-bb83-2e2af805e152": {
+					"name": "MailTask2"
 				}
 			},
 			"sequenceFlows": {
@@ -57,6 +60,9 @@
 				},
 				"249129be-087c-470d-ad74-510ce3122d77": {
 					"name": "SequenceFlow15"
+				},
+				"a9b281b1-5a83-43cc-a8ab-6da3a67fae52": {
+					"name": "SequenceFlow17"
 				}
 			},
 			"diagrams": {
@@ -164,6 +170,22 @@
 			"name": "Create SO in the core ERP",
 			"documentation": "Creates Sales Order in the core ERP with the items of customer's meal request."
 		},
+		"6cce5d66-1275-415e-80f2-51350c73ec63": {
+			"classDefinition": "com.sap.bpm.wfs.ServiceTask",
+			"destination": "CPI_SA",
+			"path": "/ByDSalesOrders",
+			"httpMethod": "GET",
+			"id": "servicetask3",
+			"name": "Create Customer Invoice in the core ERP",
+			"documentation": "Creates Customer Invoice in the core ERP with the delivered items of customer's meal request."
+		},
+		"2b7f9cf0-32ce-4e3c-bb83-2e2af805e152": {
+			"classDefinition": "com.sap.bpm.wfs.MailTask",
+			"id": "mailtask2",
+			"name": "MailTask2",
+			"documentation": "Sends an email asking customer's feedback",
+			"mailDefinitionRef": "85e1d031-b287-4dc7-ac5e-45601d4b0a35"
+		},
 		"c6b99f32-5fe6-4ab6-b60a-80fba1b9ae0f": {
 			"classDefinition": "com.sap.bpm.wfs.SequenceFlow",
 			"id": "sequenceflow1",
@@ -190,6 +212,34 @@
 			"id": "sequenceflow7",
 			"name": "SequenceFlow7",
 			"sourceRef": "722d42e0-3ec7-4314-bf98-47544347f724",
+			"targetRef": "2b7f9cf0-32ce-4e3c-bb83-2e2af805e152"
+		},
+		"e639c107-fe19-4031-9246-dfc693de6e49": {
+			"classDefinition": "com.sap.bpm.wfs.SequenceFlow",
+			"id": "sequenceflow13",
+			"name": "SequenceFlow13",
+			"sourceRef": "f7343211-7e7b-45c3-bda6-50d2cd659b81",
+			"targetRef": "27588e98-67d0-41a0-95c3-cb0875ce87ff"
+		},
+		"08e0afff-8a88-4b71-a701-a6e4e3ec8398": {
+			"classDefinition": "com.sap.bpm.wfs.SequenceFlow",
+			"id": "sequenceflow14",
+			"name": "SequenceFlow14",
+			"sourceRef": "27588e98-67d0-41a0-95c3-cb0875ce87ff",
+			"targetRef": "dbcd0575-f1b3-44f8-826a-0cc6f3e712f6"
+		},
+		"249129be-087c-470d-ad74-510ce3122d77": {
+			"classDefinition": "com.sap.bpm.wfs.SequenceFlow",
+			"id": "sequenceflow15",
+			"name": "SequenceFlow15",
+			"sourceRef": "6cce5d66-1275-415e-80f2-51350c73ec63",
+			"targetRef": "2798f4e7-bc42-4fad-a248-159095a2f40a"
+		},
+		"a9b281b1-5a83-43cc-a8ab-6da3a67fae52": {
+			"classDefinition": "com.sap.bpm.wfs.SequenceFlow",
+			"id": "sequenceflow17",
+			"name": "SequenceFlow17",
+			"sourceRef": "2b7f9cf0-32ce-4e3c-bb83-2e2af805e152",
 			"targetRef": "6cce5d66-1275-415e-80f2-51350c73ec63"
 		},
 		"42fa7a2d-c526-4a02-b3ba-49b5168ba644": {
@@ -209,8 +259,15 @@
 				"4f2305fe-30a2-47c6-b0eb-ec982770c22d": {},
 				"1f770d83-d598-4b2f-b28b-1e8d58af238c": {},
 				"00f64f8a-81b7-42f2-973a-6b3052fecec8": {},
-				"1fed7cd3-0dfc-4e67-9b7d-0cd753319869": {}
+				"1fed7cd3-0dfc-4e67-9b7d-0cd753319869": {},
+				"bc04f34d-d16b-4cc5-a534-5e2fc213e6a0": {},
+				"4448cf14-6164-4079-86fb-cd440fb19fc6": {}
 			}
+		},
+		"058948d7-f123-4c0b-80db-42c6a02b5591": {
+			"classDefinition": "com.sap.bpm.wfs.SampleContext",
+			"reference": "/sample-data/onboard/dummy.json",
+			"id": "default-start-context"
 		},
 		"df898b52-91e1-4778-baad-2ad9a261d30e": {
 			"classDefinition": "com.sap.bpm.wfs.ui.StartEventSymbol",
@@ -222,7 +279,7 @@
 		},
 		"53e54950-7757-4161-82c9-afa7e86cff2c": {
 			"classDefinition": "com.sap.bpm.wfs.ui.EndEventSymbol",
-			"x": 994,
+			"x": 1144,
 			"y": 24.5,
 			"width": 35,
 			"height": 35,
@@ -285,7 +342,7 @@
 			"classDefinition": "com.sap.bpm.wfs.ui.SequenceFlowSymbol",
 			"points": "794,42 844,42",
 			"sourceSymbol": "cb874991-bee5-45be-a234-6b4b1f4e85ca",
-			"targetSymbol": "00f64f8a-81b7-42f2-973a-6b3052fecec8",
+			"targetSymbol": "bc04f34d-d16b-4cc5-a534-5e2fc213e6a0",
 			"object": "68dd3b8a-c7ab-4f5b-bdf0-ae808d0831c0"
 		},
 		"0b775856-43cf-473e-8350-7c4d2ef2c5f0": {
@@ -296,41 +353,12 @@
 			"height": 60,
 			"object": "27588e98-67d0-41a0-95c3-cb0875ce87ff"
 		},
-		"62d7f4ed-4063-4c44-af8b-39050bd44926": {
-			"classDefinition": "com.sap.bpm.wfs.LastIDs",
-			"sequenceflow": 15,
-			"startevent": 1,
-			"endevent": 1,
-			"usertask": 6,
-			"servicetask": 3,
-			"scripttask": 1,
-			"parallelgateway": 2
-		},
-		"058948d7-f123-4c0b-80db-42c6a02b5591": {
-			"classDefinition": "com.sap.bpm.wfs.SampleContext",
-			"reference": "/sample-data/onboard/dummy.json",
-			"id": "default-start-context"
-		},
-		"e639c107-fe19-4031-9246-dfc693de6e49": {
-			"classDefinition": "com.sap.bpm.wfs.SequenceFlow",
-			"id": "sequenceflow13",
-			"name": "SequenceFlow13",
-			"sourceRef": "f7343211-7e7b-45c3-bda6-50d2cd659b81",
-			"targetRef": "27588e98-67d0-41a0-95c3-cb0875ce87ff"
-		},
 		"4f2305fe-30a2-47c6-b0eb-ec982770c22d": {
 			"classDefinition": "com.sap.bpm.wfs.ui.SequenceFlowSymbol",
 			"points": "194,42 244,42",
 			"sourceSymbol": "42b6c7f1-d64b-4772-93c5-a56ea0222cca",
 			"targetSymbol": "0b775856-43cf-473e-8350-7c4d2ef2c5f0",
 			"object": "e639c107-fe19-4031-9246-dfc693de6e49"
-		},
-		"08e0afff-8a88-4b71-a701-a6e4e3ec8398": {
-			"classDefinition": "com.sap.bpm.wfs.SequenceFlow",
-			"id": "sequenceflow14",
-			"name": "SequenceFlow14",
-			"sourceRef": "27588e98-67d0-41a0-95c3-cb0875ce87ff",
-			"targetRef": "dbcd0575-f1b3-44f8-826a-0cc6f3e712f6"
 		},
 		"1f770d83-d598-4b2f-b28b-1e8d58af238c": {
 			"classDefinition": "com.sap.bpm.wfs.ui.SequenceFlowSymbol",
@@ -339,36 +367,56 @@
 			"targetSymbol": "dc56ad04-fdc4-4527-a654-85a5e7b075af",
 			"object": "08e0afff-8a88-4b71-a701-a6e4e3ec8398"
 		},
-		"6cce5d66-1275-415e-80f2-51350c73ec63": {
-			"classDefinition": "com.sap.bpm.wfs.ServiceTask",
-			"destination": "CPI_SA",
-			"path": "/ByDSalesOrders",
-			"httpMethod": "GET",
-			"id": "servicetask3",
-			"name": "Create Customer Invoice in the core ERP",
-			"documentation": "Creates Customer Invoice in the core ERP with the delivered items of customer's meal request."
-		},
 		"00f64f8a-81b7-42f2-973a-6b3052fecec8": {
 			"classDefinition": "com.sap.bpm.wfs.ui.ServiceTaskSymbol",
-			"x": 844,
+			"x": 994,
 			"y": 12,
 			"width": 100,
 			"height": 60,
 			"object": "6cce5d66-1275-415e-80f2-51350c73ec63"
 		},
-		"249129be-087c-470d-ad74-510ce3122d77": {
-			"classDefinition": "com.sap.bpm.wfs.SequenceFlow",
-			"id": "sequenceflow15",
-			"name": "SequenceFlow15",
-			"sourceRef": "6cce5d66-1275-415e-80f2-51350c73ec63",
-			"targetRef": "2798f4e7-bc42-4fad-a248-159095a2f40a"
-		},
 		"1fed7cd3-0dfc-4e67-9b7d-0cd753319869": {
 			"classDefinition": "com.sap.bpm.wfs.ui.SequenceFlowSymbol",
-			"points": "944,42 994,42",
+			"points": "1094,42 1144,42",
 			"sourceSymbol": "00f64f8a-81b7-42f2-973a-6b3052fecec8",
 			"targetSymbol": "53e54950-7757-4161-82c9-afa7e86cff2c",
 			"object": "249129be-087c-470d-ad74-510ce3122d77"
+		},
+		"bc04f34d-d16b-4cc5-a534-5e2fc213e6a0": {
+			"classDefinition": "com.sap.bpm.wfs.ui.MailTaskSymbol",
+			"x": 844,
+			"y": 12,
+			"width": 100,
+			"height": 60,
+			"object": "2b7f9cf0-32ce-4e3c-bb83-2e2af805e152"
+		},
+		"4448cf14-6164-4079-86fb-cd440fb19fc6": {
+			"classDefinition": "com.sap.bpm.wfs.ui.SequenceFlowSymbol",
+			"points": "944,42 994,42",
+			"sourceSymbol": "bc04f34d-d16b-4cc5-a534-5e2fc213e6a0",
+			"targetSymbol": "00f64f8a-81b7-42f2-973a-6b3052fecec8",
+			"object": "a9b281b1-5a83-43cc-a8ab-6da3a67fae52"
+		},
+		"62d7f4ed-4063-4c44-af8b-39050bd44926": {
+			"classDefinition": "com.sap.bpm.wfs.LastIDs",
+			"maildefinition": 1,
+			"sequenceflow": 17,
+			"startevent": 1,
+			"endevent": 1,
+			"usertask": 6,
+			"servicetask": 3,
+			"scripttask": 1,
+			"mailtask": 2,
+			"parallelgateway": 2
+		},
+		"85e1d031-b287-4dc7-ac5e-45601d4b0a35": {
+			"classDefinition": "com.sap.bpm.wfs.MailDefinition",
+			"name": "maildefinition1",
+			"to": "${context.orderData.CustomerEmail}",
+			"subject": "We would appreciate your feedback",
+			"reference": "/sample-data/onboard/qualtrics_email.html",
+			"ignoreInvalidRecipients": true,
+			"id": "maildefinition1"
 		}
 	}
 }

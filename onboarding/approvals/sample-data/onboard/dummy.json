@@ -1,7 +1,8 @@
 {
-    "recipient": "thiago.de.castro.mendes@sap.com",
+    "recipient": "manager@pizza.com",
     "orderData": {
         "CustomerName": "Andres",
+        "CustomerEmail": "sample@gmail.com",
         "Address": "Calle X",
         "ProductID": "SH50021"
     }
