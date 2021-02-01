@@ -325,7 +325,7 @@
 		},
 		"62488257-f2cc-4f4b-bed1-ce6fcb16e4d1": {
 			"classDefinition": "com.sap.bpm.wfs.ui.SequenceFlowSymbol",
-			"points": "644,42 694,42",
+			"points": "644,42 644,84 694,84 694,42",
 			"sourceSymbol": "8a7a4ec2-7cdb-410b-9193-98f5fb069ad8",
 			"targetSymbol": "cb874991-bee5-45be-a234-6b4b1f4e85ca",
 			"object": "ab734063-3a90-46f2-a122-4dd40371026d"
@@ -414,7 +414,7 @@
 			"name": "maildefinition1",
 			"to": "${context.orderData.CustomerEmail}",
 			"subject": "We would appreciate your feedback",
-			"reference": "/sample-data/onboard/qualtrics_email.html",
+			"reference": "/sample-data/onboard/qualtrics_sample_sbeats.html",
 			"ignoreInvalidRecipients": true,
 			"id": "maildefinition1"
 		}
