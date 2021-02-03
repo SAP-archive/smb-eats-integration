@@ -5,10 +5,8 @@ name: CI
 # Controls when the action will run. 
 on:
   # Triggers it everyday at 7am UTC
-  push:
-    branches: [ master ]
   schedule:
-    - cron: '* * * * *'
+    - cron: '07 13 * * *'
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
