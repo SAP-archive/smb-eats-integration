@@ -6,7 +6,7 @@ name: CI
 on:
   # Triggers it everyday at 7am UTC
   schedule:
-    - cron: '0 7 * * *'
+    - cron: '* * * * *'
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
