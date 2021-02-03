@@ -5,6 +5,8 @@ name: CI
 # Controls when the action will run. 
 on:
   # Triggers it everyday at 7am UTC
+  push:
+    branches: [ master ]
   schedule:
     - cron: '* * * * *'
 
