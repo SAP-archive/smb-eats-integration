@@ -1,0 +1,17 @@
+#mail.password=<< Existing password/certificate removed on export >>
+#
+#Thu Feb 04 17:28:55 UTC 2021
+Type=MAIL
+mail.description=Workflow service mail destination
+mail.user=sapsmbeats@gmail.com
+mail.bpm.send.disabled=false
+mail.smtp.from=smbeats@sasap.com
+mail.transport.protocol=smtp
+mail.smtp.starttls.required=true
+mail.smtp.host=smtp.gmail.com
+Name=bpmworkflowruntime_mail
+mail.smtp.starttls.enable=true
+ProxyType=Internet
+mail.smtp.port=587
+mail.smtp.auth=true
+mail.smtp.ssl.trust=*

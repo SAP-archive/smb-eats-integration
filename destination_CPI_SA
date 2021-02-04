@@ -1,0 +1,10 @@
+#Password=<< Existing password/certificate removed on export >>
+#
+#Thu Feb 04 17:29:05 UTC 2021
+URL=https\://d100104-iflmap.hcisbt.eu1.hana.ondemand.com/http
+Name=CPI_SA
+ProxyType=Internet
+Type=HTTP
+Authentication=BasicAuthentication
+Description=CPI HTTP endpoint
+User=I844173
