@@ -1,0 +1,9 @@
+{
+    "recipient": "pizza.manager@sap.com",
+    "orderData": {
+        "CustomerName": "Juan the Customer",
+        "CustomerEmail": "democustomerjuan123@gmail.com",
+        "Address": "28000",
+        "ProductID": "PZ00001"
+    }
+}

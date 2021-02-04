@@ -7,7 +7,7 @@
   },
   "payload": {
     "visualizations": {
-      "onboarding-approval-app-config": {
+      "smbeats-approval-app-config": {
         "vizType": "sap.ushell.StaticAppLauncher",
         "vizConfig": {
           "sap.app": {
@@ -20,7 +20,7 @@
               "parameters": {
                 "formDefinitionId": {
                   "value": {
-                    "value": "onboardingapprovalform",
+                    "value": "smbeatsapprovalform",
                     "format": "plain"
                   }
                 },

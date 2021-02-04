@@ -31,7 +31,7 @@
 ######org.cloudfoundry.multiapps.controller.persistence.services.ProcessLogger########http-nio-0.0.0.0-8080-exec-24###
 [XS2StartProcessListener] Process variables: {
   "abortOnError" : false,
-  "mtaId" : "onboarding",
+  "mtaId" : "smbeats",
   "keepFiles" : false,
   "verifyArchiveSignature" : false,
   "noFailOnMissingPermissions" : false,
@@ -153,7 +153,7 @@ Step "Detect Schema Version" finished#
 [MergeDescriptorsStep] Merged deployment descriptor: {
   "majorSchemaVersion" : 3,
   "schemaVersion" : "3.2.0",
-  "id" : "onboarding",
+  "id" : "smbeats",
   "version" : "0.0.1",
   "modules" : [ {
     "majorSchemaVersion" : 3,
@@ -288,7 +288,7 @@ Step "Detect Deployed MTA" finished#
 [CollectSystemParametersStep] Descriptor with system parameters: {
   "majorSchemaVersion" : 3,
   "schemaVersion" : "3.2.0",
-  "id" : "onboarding",
+  "id" : "smbeats",
   "version" : "0.0.1",
   "modules" : [ {
     "majorSchemaVersion" : 3,
@@ -433,7 +433,7 @@ Step "Collect System Parameters" finished#
 [ProcessDescriptorStep] Resolved deployment descriptor: {
   "majorSchemaVersion" : 3,
   "schemaVersion" : "3.2.0",
-  "id" : "onboarding",
+  "id" : "smbeats",
   "version" : "0.0.1",
   "modules" : [ {
     "majorSchemaVersion" : 3,

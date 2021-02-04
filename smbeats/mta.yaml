@@ -1,0 +1,17 @@
+_schema-version: "3.2"
+ID: smbeats
+version: 0.0.1
+modules:
+  - name: approvals
+    type: com.sap.application.content
+    path: approvals
+    requires:
+      - name: wm_workflow
+        parameters:
+          content-target: true
+resources:
+  - name: wm_workflow
+    parameters:
+      service-plan: lite
+      service: workflow
+    type: org.cloudfoundry.existing-service
