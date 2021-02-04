@@ -32,6 +32,9 @@ This repository is comprised of the workflow and integration scenarios to orches
 *
 
 ## Deployment
+* Configure the destination for the CPI tenant by importing the file *"destination_CPI_SA"* to the *Connectivity > Destinations* of your subaccount (required to create the documents in the SAP Cloud ERP). 
+* Do the same with the file *"destination_bpmworkflowruntime_mail"* to configure the SMTP server destination (required to send the email survey).
+
 Clone this repository using the Business Application Studio;
 <p align="center">
   <img src="https://i.imgur.com/tfk5GNG.png">
