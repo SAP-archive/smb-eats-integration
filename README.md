@@ -2,15 +2,13 @@
 [![REUSE status](https://api.reuse.software/badge/github.com/sap-samples/smb-eats-integration)](https://api.reuse.software/info/github.com/sap-samples/smb-eats-integration)
 
 # SMB Eats Integration
-## Workflow and ERP integration for the SMB Eats prototype
+## Workflow and ERP integration for the [SMB Eats prototype](https://github.com/SAP-samples/smb-eats-backend)
 [Read full blog post here](https://blogs.sap.com/2021/02/xx/xxxxxxxxx)
 
 # Description
-This repository is comprised of the workflow and integration scenarios to orchestrate the following steps:
+This repository is comprised of the workflow definitions and integration scenarios required by the [smb-eats-backend](https://github.com/SAP-samples/smb-eats-backend) sample. It orchestrates the following steps:
 
-<p align="center">
-  <img src="https://i.imgur.com/mouLjiT.png">
-</p>
+![worfklow process](https://i.imgur.com/mouLjiT.png "Workflow process on the Business Application Studio")
 
 1. Pizza shop manager needs to approve a customer's order request;
 2. Sales Order is posted to the SAP Cloud ERP;
