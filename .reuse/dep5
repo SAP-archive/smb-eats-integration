@@ -1,0 +1,10 @@
+Format: https://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
+Upstream-Name: smb-eats-integration
+Upstream-Contact: Mendesthi <>
+Source: https://github.com/mendesthi/smb-eats-integration
+
+# Sample paragraph, commented out:
+#
+Files: * 
+Copyright: 2020 SAP SE or an SAP affiliate company and smb-eats-integration contributors
+License: Apache-2.0
