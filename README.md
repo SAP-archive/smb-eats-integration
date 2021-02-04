@@ -2,7 +2,8 @@
 [![REUSE status](https://api.reuse.software/badge/github.com/sap-samples/smb-eats-integration)](https://api.reuse.software/info/github.com/sap-samples/smb-eats-integration)
 
 # SMB Eats Integration
-## Workflow and ERP integration for the [SMB Eats prototype](https://github.com/SAP-samples/smb-eats-backend)
+*Workflow and ERP integration for the [SMB Eats prototype](https://github.com/SAP-samples/smb-eats-backend)*
+
 [Read full blog post here](https://blogs.sap.com/2021/02/xx/xxxxxxxxx)
 
 # Description
