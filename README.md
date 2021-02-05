@@ -7,7 +7,7 @@
 [Read full blog post here](https://blogs.sap.com/2021/02/xx/xxxxxxxxx)
 
 # Description
-This repository is comprised of the workflow definitions and integration scenarios required by the [smb-eats-backend](https://github.com/SAP-samples/smb-eats-backend) sample. It orchestrates the following steps:
+This repository is comprised of the workflow definitions and integration flows required by the [smb-eats-backend](https://github.com/SAP-samples/smb-eats-backend) sample. It orchestrates the following steps:
 
 ![worfklow process](https://i.imgur.com/mouLjiT.png "Workflow process on the Business Application Studio")
 
@@ -23,8 +23,9 @@ This repository is comprised of the workflow definitions and integration scenari
 ## Requirements
 * A free trial account on SAP Business Technology Platform with Cloud Foundry Trial initialized;
 * Follow [this tutorial](https://developers.sap.com/tutorials/cp-trial-quick-onboarding.html) to get a trial SAP Business Technology trial account;
-* Set up Workflow Management as per [this tutorial](https://developers.sap.com/tutorials/cp-starter-ibpm-employeeonboarding-1-setup.html)
-* Then configure your [development space](https://triallink.eu10.trial.applicationstudio.cloud.sap) so you can import this project into the SAP Business Application Studio - see step 1 of [this tutorial](https://developers.sap.com/tutorials/cp-workflow-2-create-module-cf.html) to set up your environment correctly;
+* Setup your SAP Business Technology Platform Integration Tenant by following [this tutorial](https://developers.sap.com/tutorials/cp-starter-integration-cpi-onboard-subscribe.html). The documentation [Initial Setup of in Cloud Foundry Environment](https://help.sap.com/viewer/368c481cd6954bdfa5d0435479fd4eaf/Cloud/en-US/302b47b11e1749c3aa9478f4123fc216.html) can also help you to understand the whole setup process;
+* Set up Workflow Management as per [this tutorial](https://developers.sap.com/tutorials/cp-starter-ibpm-employeeonboarding-1-setup.html);
+* Configure your [development space](https://triallink.eu10.trial.applicationstudio.cloud.sap) at SAP Business Application Studio so you can import the provided workflow project. Folow step 1 of [this tutorial](https://developers.sap.com/tutorials/cp-workflow-2-create-module-cf.html) to set up your environment correctly;
 * A SAP Business ByDesign test tenant;
 * A Qualtrics Survey demo tenant.
 
@@ -32,6 +33,8 @@ This repository is comprised of the workflow definitions and integration scenari
 *
 
 ## Deployment
+
+### Workflow Deployment
 * Configure the destination for the CPI tenant by importing the file *"destination_CPI_SA"* to the *Connectivity > Destinations* of your subaccount (required to create the documents in the SAP Cloud ERP). 
 * Do the same with the file *"destination_bpmworkflowruntime_mail"* to configure the SMTP server destination (required to send the email survey).
 
@@ -55,6 +58,26 @@ Finally build and deploy the workflow itself;
 <p align="center">
   <img src="https://i.imgur.com/vwuSA3l.png">
 </p>
+
+### Integration Flows Deployment
+The communication between Workflow and your ERP Backend is done via Integration Flows implemented in your Integration Tenant (CPI).
+Steps to follow:
+* Setup your ERP Backend OData APIs. 
+In this specific prototype sample we are connecting to SAP Business ByDesign. In order to get the required OData APIs ready to be consumed please follow the blog [SAP Business ByDesign – OData API Examples](https://blogs.sap.com/2019/02/27/sap-business-bydesign-api-usage-samples/) providing a full set of custom OData APIs ready to be downloaded and imported into ByDesign, we have used some the provided APIs in our prototype.
+* Download the provided Integration Package SMBEats.zip file from the [cpi-flows github folder](https://github.com/SAP-samples/smb-eats-integration/tree/master/cpi-flows);
+* Connect to your SAP BTP Integration Tenant and import the provided Integration Package. 
+Follow this [documentation](https://help.sap.com/viewer/368c481cd6954bdfa5d0435479fd4eaf/Cloud/en-US/b6a1a6169ab145aa8d647b2e21c54194.html) if you need help on how to import a CPI package;
+You should get a package containing 3 flows:
+![SMBEats Integration Flows](https://i.imgur.com/31BIywh.png)
+* Configure your ERP Backend technical user into CPI. Please check section "iii.	Store B1 and/or ByD User Credentials at SAP Cloud Platform Integration tenant" from the [SMB Samples Step by Step guide](https://dam.sap.com/mac/preview/XnOAPs.htm) to get details on how to store ByDesign user credentials in CPI. 
+Note: In the provided flows the user is named BYD_ADMIN, if you use a different name you will need to replace it; 
+* Setup Secure Oubound HTTP Connection by following this [blog](https://blogs.sap.com/2017/06/19/cloud-integration-how-to-setup-secure-outbound-http-connection-using-keystore-monitor/).
+* Replace your ERP backend URL in the different flows HTTP OData calls.
+Note: A new version of the flows based on global variables will be released soon so the URL wil only be need to be changed in a single location. I'll update this README when ready;
+* Deploy one by one the Integration Flows part of the package (see SMBEats Integration Flows image above)
+![CreateOrder Integration Flow](https://i.imgur.com/rYkyj2Z.png)
+* (Optional) If you want to learn a more about the Integration Suite don't hesitate to check this [blog](https://dam.sap.com/mac/preview/XnOAPs.htm) that provides samples, a step by step guide and references to available materials.
+
 
 ## Support and Contributions
 This repository is provided "as-is". No warranty or support is available. Feel free to open issues.
