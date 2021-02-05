@@ -23,7 +23,8 @@ This repository is comprised of the workflow definitions and integration scenari
 ## Requirements
 * A free trial account on SAP Business Technology Platform with Cloud Foundry Trial initialized;
 * Follow [this tutorial](https://developers.sap.com/tutorials/cp-trial-quick-onboarding.html) to get a trial SAP Business Technology trial account;
-* Setup a [development space](https://triallink.eu10.trial.applicationstudio.cloud.sap) so you can import this project into the SAP Business Application Studio - see step 1 of [this tutorial](https://developers.sap.com/tutorials/cp-workflow-2-create-module-cf.html) to set up your environment correctly;
+* Set up Workflow Management as per [this tutorial](https://developers.sap.com/tutorials/cp-starter-ibpm-employeeonboarding-1-setup.html)
+* Then configure your [development space](https://triallink.eu10.trial.applicationstudio.cloud.sap) so you can import this project into the SAP Business Application Studio - see step 1 of [this tutorial](https://developers.sap.com/tutorials/cp-workflow-2-create-module-cf.html) to set up your environment correctly;
 * A SAP Business ByDesign test tenant;
 * A Qualtrics Survey demo tenant.
 
