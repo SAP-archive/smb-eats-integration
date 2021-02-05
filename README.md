@@ -74,8 +74,8 @@ Note: In the provided flows the user is named BYD_ADMIN, if you use a different 
 * Setup Secure Oubound HTTP Connection by following this [blog](https://blogs.sap.com/2017/06/19/cloud-integration-how-to-setup-secure-outbound-http-connection-using-keystore-monitor/).
 * Replace your ERP backend URL in the different flows HTTP OData calls.
 Note: A new version of the flows based on global variables will be released soon so the URL wil only be need to be changed in a single location. I'll update this README when ready;
-* Deploy one by one the Integration Flows part of the package (see SMBEats Integration Flows image above)
-![CreateOrder Integration Flow](https://i.imgur.com/rYkyj2Z.png)
+* Deploy one by one the 3 Integration Flows part of the package:
+![CreateOrder Integration Flow](https://i.imgur.com/kGRKf9r.png)
 * (Optional) If you want to learn a more about the Integration Suite don't hesitate to check this [blog](https://dam.sap.com/mac/preview/XnOAPs.htm) that provides samples, a step by step guide and references to available materials.
 
 
