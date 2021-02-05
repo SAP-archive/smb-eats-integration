@@ -4,7 +4,7 @@
 # SMB Eats Integration
 *Workflow and ERP integration for the [SMB Eats prototype](https://github.com/SAP-samples/smb-eats-backend)*
 
-[Read full blog post here](https://blogs.sap.com/2021/02/xx/xxxxxxxxx)
+[Read full blog post here](https://blogs.sap.com/2021/02/05/sap-workflow-management-and-loosely-coupled-architecture/)
 
 # Description
 This repository is comprised of the workflow definitions and integration flows required by the [smb-eats-backend](https://github.com/SAP-samples/smb-eats-backend) sample. It orchestrates the following steps:
