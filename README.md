@@ -62,21 +62,21 @@ Finally build and deploy the workflow itself;
 ### Integration Flows Deployment
 The communication between Workflow and your ERP Backend is done via Integration Flows implemented in your Integration Tenant (CPI).</br>
 The steps to follow are:
-* Setup your ERP Backend OData APIs. </br>
+1. Setup your ERP Backend OData APIs. </br>
 In this specific prototype sample we are connecting to SAP Business ByDesign. In order to get the required OData APIs ready to be consumed please follow the blog [SAP Business ByDesign – OData API Examples](https://blogs.sap.com/2019/02/27/sap-business-bydesign-api-usage-samples/) providing a full set of custom OData APIs ready to be downloaded and imported into ByDesign, we have used some the provided APIs in our prototype.
-* Download the provided Integration Package SMBEats.zip file from the [cpi-flows github folder](https://github.com/SAP-samples/smb-eats-integration/tree/master/cpi-flows);
-* Connect to your SAP BTP Integration Tenant and import the provided Integration Package. </br>
-Follow this [documentation](https://help.sap.com/viewer/368c481cd6954bdfa5d0435479fd4eaf/Cloud/en-US/b6a1a6169ab145aa8d647b2e21c54194.html) if you need help on how to import a CPI package;
+2. Download the provided Integration Package SMBEats.zip file from the [cpi-flows github folder](https://github.com/SAP-samples/smb-eats-integration/tree/master/cpi-flows);
+3. Connect to your SAP BTP Integration Tenant and import the provided Integration Package. </br>
+Follow this [documentation](https://help.sap.com/viewer/368c481cd6954bdfa5d0435479fd4eaf/Cloud/en-US/b6a1a6169ab145aa8d647b2e21c54194.html) if you need help on how to import a CPI package;</br>
 You should get a package containing 3 flows:</br>
 ![SMBEats Integration Flows](https://i.imgur.com/31BIywh.png)
-* Configure your ERP Backend technical user into CPI. Please check section "iii.	Store B1 and/or ByD User Credentials at SAP Cloud Platform Integration tenant" from the [SMB Samples Step by Step guide](https://dam.sap.com/mac/preview/XnOAPs.htm) to get details on how to store ByDesign user credentials in CPI. 
+4. Configure your ERP Backend technical user into CPI. Please check section "iii.	Store B1 and/or ByD User Credentials at SAP Cloud Platform Integration tenant" from the [SMB Samples Step by Step guide](https://dam.sap.com/mac/preview/XnOAPs.htm) to get details on how to store ByDesign user credentials in CPI. </br>
 Note: In the provided flows the user is named BYD_ADMIN, if you use a different name you will need to replace it; 
-* Setup Secure Oubound HTTP Connection by following this [blog](https://blogs.sap.com/2017/06/19/cloud-integration-how-to-setup-secure-outbound-http-connection-using-keystore-monitor/).
-* Replace your ERP backend URL in the different flows HTTP OData calls. </br>
+5. Setup Secure Oubound HTTP Connection by following this [blog](https://blogs.sap.com/2017/06/19/cloud-integration-how-to-setup-secure-outbound-http-connection-using-keystore-monitor/).
+6. Replace your ERP backend URL in the different flows HTTP OData calls. </br>
 Note: A new version of the flows based on global variables will be released soon so the URL wil only be need to be changed in a single location. I'll update this README when ready;
-* Deploy one by one the 3 Integration Flows part of the package:
+7. Deploy one by one the 3 Integration Flows part of the package:
 ![CreateOrder Integration Flow](https://i.imgur.com/kGRKf9r.png)
-* (Optional) If you want to learn a more about the Integration Suite don't hesitate to check this [blog](https://dam.sap.com/mac/preview/XnOAPs.htm) that provides samples, a step by step guide and references to available materials.
+8. (Optional) If you want to learn a more about the Integration Suite don't hesitate to check this [blog](https://dam.sap.com/mac/preview/XnOAPs.htm) that provides samples, a step by step guide and references to available materials.
 
 
 ## Support and Contributions
