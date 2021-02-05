@@ -23,7 +23,7 @@ This repository is comprised of the workflow definitions and integration scenari
 ## Requirements
 * A free trial account on SAP Business Technology Platform with Cloud Foundry Trial initialized;
 * Follow [this tutorial](https://developers.sap.com/tutorials/cp-trial-quick-onboarding.html) to get a trial SAP Business Technology trial account;
-* Setup a [development space](https://triallink.eu10.trial.applicationstudio.cloud.sap) so you can import this project into the SAP Business Application Studio - see step 1 of [this workflow](https://developers.sap.com/tutorials/cp-workflow-2-create-module-cf.html);
+* Setup a [development space](https://triallink.eu10.trial.applicationstudio.cloud.sap) so you can import this project into the SAP Business Application Studio - see step 1 of [this tutorial](https://developers.sap.com/tutorials/cp-workflow-2-create-module-cf.html) to set up your environment correctly;
 * A SAP Business ByDesign test tenant;
 * A Qualtrics Survey demo tenant.
 
@@ -39,7 +39,7 @@ Clone this repository using the Business Application Studio;
   <img src="https://i.imgur.com/tfk5GNG.png">
 </p>
 
-Build and Deploy the router application;
+Then go ahead, build and deploy the router application for the workflow;
 <p align="center">
   <img src="https://i.imgur.com/yeBYHlp.png">
 </p>
@@ -47,7 +47,7 @@ Build and Deploy the router application;
   <img src="https://i.imgur.com/dMgTczy.png">
 </p>
 
-Build and Deploy the workflow;
+Finally build and deploy the workflow itself;
 <p align="center">
   <img src="https://i.imgur.com/0egtyOb.png">
 </p>
