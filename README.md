@@ -29,14 +29,12 @@ This repository is comprised of the workflow definitions and integration flows r
 * A SAP Business ByDesign test tenant;
 * A Qualtrics Survey demo tenant.
 
-## Notes
-*
-
 ## Deployment
 
 ### Workflow Deployment
 * Configure the destination for the CPI tenant by importing the file *"destination_CPI_SA"* to the *Connectivity > Destinations* of your subaccount (required to create the documents in the SAP Cloud ERP). 
 * Do the same with the file *"destination_bpmworkflowruntime_mail"* to configure the SMTP server destination (required to send the email survey).
+* Check here how to [import a destination](https://help.sap.com/viewer/cca91383641e40ffbe03bdc78f00f681/Cloud/en-US/91ee9db4737d43b798997ab93e7f3d6e.html) from a file.
 
 Clone this repository using the Business Application Studio;
 <p align="center">
@@ -58,6 +56,8 @@ Finally build and deploy the workflow itself;
 <p align="center">
   <img src="https://i.imgur.com/vwuSA3l.png">
 </p>
+
+If you want to test your workflow, browse to the [SAP Business Technology Platform Trial Account](https://account.hanatrial.ondemand.com), select your trial subaccount, select your dev space and open your Workflow Management Application. Select the Monitor Workflows > Workflow Definitions, hit "Start New Instance" and replace the "recipient" and "CustomerEmail" with the e-mail you use to login to your trial account. Click "Start New Instance and Close" and head to the "Inbox" tile. You should have a task awaiting for approval.
 
 ### Integration Flows Deployment
 The communication between Workflow and your ERP Backend is done via Integration Flows implemented in your Integration Tenant (CPI).</br>
