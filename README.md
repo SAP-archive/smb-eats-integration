@@ -72,10 +72,14 @@ You should get a package containing 3 flows:</br>
 4. Configure your ERP Backend technical user into CPI. Please check section "iii.	Store B1 and/or ByD User Credentials at SAP Cloud Platform Integration tenant" from the [SMB Samples Step by Step guide](https://dam.sap.com/mac/preview/XnOAPs.htm) to get details on how to store ByDesign user credentials in CPI. </br>
 Note: In the provided flows the user is named BYD_ADMIN, if you use a different name you will need to replace it; 
 5. Setup Secure Oubound HTTP Connection by following this [blog](https://blogs.sap.com/2017/06/19/cloud-integration-how-to-setup-secure-outbound-http-connection-using-keystore-monitor/).
-6. Replace your ERP backend URL in the different flows HTTP OData calls. </br>
-Note: A new version of the flows based on global variables will be released soon so the URL wil only be need to be changed in a single location. I'll update this README when ready;
+6. Configure your ERP backend server and user.  </br>
+The different parameters to be configured to connect to your specific ERP Backend have been defined in the flows using the [Externalization](https://blogs.sap.com/2017/06/20/externalizing-parameters-using-sap-cloud-platform-integrations-web-application/) feature.<br>
+Press the Configure link on the top right of each one of the provided flows:
+![Configure](https://i.imgur.com/ycHatkG.png)
+A new screen opens where you can configure each one of the Receivers with the corresponding values required for the Connection:
+![SetValues](https://i.imgur.com/ziWlBv2.png)
 7. Deploy one by one the 3 Integration Flows part of the package:
-![CreateOrder Integration Flow](https://i.imgur.com/kGRKf9r.png)
+![CreateOrder Integration Flow](https://i.imgur.com/PrQUwvU.png)
 8. (Optional) If you want to learn a more about the Integration Suite don't hesitate to check this [blog](https://dam.sap.com/mac/preview/XnOAPs.htm) that provides samples, a step by step guide and references to available materials.
 
 
