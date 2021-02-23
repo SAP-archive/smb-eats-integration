@@ -1,0 +1,77 @@
+{
+    "id": "approvalformRules",
+    "schemaVersion": "1.1.0",
+    "name": "approvalformRules",
+    "revision": "1.0",
+    "type": "task",
+    "readOnly": true,
+    "content": [
+        {
+            "id": "CustomerName",
+            "type": "string",
+            "label": "Customer Name",
+            "readOnly": false,
+            "value": "${context.orderData.CustomerName}",
+            "constraints": {
+                "required": false
+            }
+        },
+        {
+            "id": "customer_e_mail",
+            "type": "string",
+            "label": "Customer E-mail",
+            "readOnly": false,
+            "value": "${context.orderData.CustomerEmail}",
+            "constraints": {
+                "required": false
+            }
+        },
+        {
+            "id": "Address",
+            "type": "string",
+            "label": "Address",
+            "readOnly": false,
+            "value": "${context.orderData.Address}",
+            "constraints": {
+                "required": false
+            }
+        },
+        {
+            "id": "ProductID",
+            "type": "string",
+            "label": "Product ID",
+            "readOnly": false,
+            "value": "${context.orderData.ProductID}",
+            "constraints": {
+                "required": true
+            }
+        },
+        {
+            "id": "channel",
+            "type": "string",
+            "label": "Channel",
+            "readOnly": false,
+            "value": "${context.channel}",
+            "constraints": {
+                "required": false
+            }
+        },
+        {
+            "id": "Promo",
+            "type": "string",
+            "label": "Promo",
+            "readOnly": false,
+            "value": "${context.offer.OffersInfo[0].ProdDesc}",
+            "constraints": {
+                "required": false
+            }
+        }
+    ],
+    "decisions": [
+        {
+            "id": "approve",
+            "text": "Approve",
+            "decisionType": "positive"
+        }
+    ]
+}

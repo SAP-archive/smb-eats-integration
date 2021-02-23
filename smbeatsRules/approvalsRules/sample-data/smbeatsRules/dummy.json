@@ -1,0 +1,10 @@
+{
+    "recipient": "thiago.de.castro.mendes@sap.com",
+    "channel": "chatbot",
+    "orderData": {
+        "CustomerName": "TCM the Customer",
+        "CustomerEmail": "thiago.de.castro.mendes@sap.com",
+        "Address": "28000",
+        "ProductID": "PZ00001"
+    }
+}
