@@ -359,7 +359,7 @@
 		},
 		"fff554ae-7773-4507-9a8f-1d7ae02d1ab2": {
 			"classDefinition": "com.sap.bpm.wfs.SequenceFlow",
-			"condition": "${context.approvalNeeded==\"true\"}",
+			"condition": "${context.approvalNeeded==true}",
 			"id": "sequenceflow55",
 			"name": "Needs user approval",
 			"sourceRef": "3941c79a-fe8c-485d-9bb9-9b778bf6ab64",
@@ -385,6 +385,62 @@
 			"name": "SequenceFlow58",
 			"sourceRef": "f960ee89-92ee-4624-bbca-500a8e004599",
 			"targetRef": "3941c79a-fe8c-485d-9bb9-9b778bf6ab64"
+		},
+		"4ef73666-00b1-4de1-8406-9f15cb143661": {
+			"classDefinition": "com.sap.bpm.wfs.SequenceFlow",
+			"id": "sequenceflow65",
+			"name": "SequenceFlow65",
+			"sourceRef": "27588e98-67d0-41a0-95c3-cb0875ce87ff",
+			"targetRef": "dbcd0575-f1b3-44f8-826a-0cc6f3e712f6"
+		},
+		"7c903cfa-049d-4846-9334-0faa7daa6a9f": {
+			"classDefinition": "com.sap.bpm.wfs.SequenceFlow",
+			"id": "sequenceflow66",
+			"name": "SequenceFlow66",
+			"sourceRef": "f7343211-7e7b-45c3-bda6-50d2cd659b81",
+			"targetRef": "27588e98-67d0-41a0-95c3-cb0875ce87ff"
+		},
+		"0a8229d1-c861-45c8-8cf4-d2a7550f2c68": {
+			"classDefinition": "com.sap.bpm.wfs.SequenceFlow",
+			"id": "sequenceflow68",
+			"name": "SequenceFlow68",
+			"sourceRef": "dbcd0575-f1b3-44f8-826a-0cc6f3e712f6",
+			"targetRef": "172b80e4-ae00-49ac-9adb-d630176d70ae"
+		},
+		"2d87f712-5e6f-41a9-8f6d-2655b9a21184": {
+			"classDefinition": "com.sap.bpm.wfs.SequenceFlow",
+			"id": "sequenceflow69",
+			"name": "SequenceFlow69",
+			"sourceRef": "172b80e4-ae00-49ac-9adb-d630176d70ae",
+			"targetRef": "6cce5d66-1275-415e-80f2-51350c73ec63"
+		},
+		"5a159513-1956-4910-982e-52f4e6fbcf7b": {
+			"classDefinition": "com.sap.bpm.wfs.SequenceFlow",
+			"id": "sequenceflow70",
+			"name": "SequenceFlow70",
+			"sourceRef": "6cce5d66-1275-415e-80f2-51350c73ec63",
+			"targetRef": "722d42e0-3ec7-4314-bf98-47544347f724"
+		},
+		"a2b17195-ad52-4202-be2a-c450883727d6": {
+			"classDefinition": "com.sap.bpm.wfs.SequenceFlow",
+			"id": "sequenceflow71",
+			"name": "SequenceFlow71",
+			"sourceRef": "722d42e0-3ec7-4314-bf98-47544347f724",
+			"targetRef": "2b7f9cf0-32ce-4e3c-bb83-2e2af805e152"
+		},
+		"518ae065-da3c-406f-8e4b-62a4c3d78cfc": {
+			"classDefinition": "com.sap.bpm.wfs.SequenceFlow",
+			"id": "sequenceflow72",
+			"name": "SequenceFlow72",
+			"sourceRef": "2b7f9cf0-32ce-4e3c-bb83-2e2af805e152",
+			"targetRef": "8c85ea56-ac22-4d48-98b1-496c6d3dee3a"
+		},
+		"dbf9e029-7a28-45d9-8c24-180c6f3f9251": {
+			"classDefinition": "com.sap.bpm.wfs.SequenceFlow",
+			"id": "sequenceflow73",
+			"name": "SequenceFlow73",
+			"sourceRef": "8c85ea56-ac22-4d48-98b1-496c6d3dee3a",
+			"targetRef": "2798f4e7-bc42-4fad-a248-159095a2f40a"
 		},
 		"42fa7a2d-c526-4a02-b3ba-49b5168ba644": {
 			"classDefinition": "com.sap.bpm.wfs.ui.Diagram",
@@ -627,6 +683,62 @@
 			"targetSymbol": "8fa5927e-896a-465d-96dd-9eb6687f5bb0",
 			"object": "6a60c50a-f50a-459e-ac51-6a7be9d345f8"
 		},
+		"8cdc3ea7-e765-4418-ba9e-3fdbbf952ada": {
+			"classDefinition": "com.sap.bpm.wfs.ui.SequenceFlowSymbol",
+			"points": "1175.9999976158142,-69.00000029802322 1009.4999976158142,-69.00000029802322",
+			"sourceSymbol": "0b775856-43cf-473e-8350-7c4d2ef2c5f0",
+			"targetSymbol": "dc56ad04-fdc4-4527-a654-85a5e7b075af",
+			"object": "4ef73666-00b1-4de1-8406-9f15cb143661"
+		},
+		"e7448a6b-20ad-49c3-9b6f-74f555eb670d": {
+			"classDefinition": "com.sap.bpm.wfs.ui.SequenceFlowSymbol",
+			"points": "1175.9999976158142,59.999999701976776 1175.9999976158142,-39.500000298023224",
+			"sourceSymbol": "42b6c7f1-d64b-4772-93c5-a56ea0222cca",
+			"targetSymbol": "0b775856-43cf-473e-8350-7c4d2ef2c5f0",
+			"object": "7c903cfa-049d-4846-9334-0faa7daa6a9f"
+		},
+		"39498ab5-5f92-418f-a133-8b33f23f868b": {
+			"classDefinition": "com.sap.bpm.wfs.ui.SequenceFlowSymbol",
+			"points": "959.9999976158142,-69.00000029802322 793.4999976158142,-69.00000029802322",
+			"sourceSymbol": "dc56ad04-fdc4-4527-a654-85a5e7b075af",
+			"targetSymbol": "8a7a4ec2-7cdb-410b-9193-98f5fb069ad8",
+			"object": "0a8229d1-c861-45c8-8cf4-d2a7550f2c68"
+		},
+		"d9ef8035-a683-4663-bdbd-888fa7f35c61": {
+			"classDefinition": "com.sap.bpm.wfs.ui.SequenceFlowSymbol",
+			"points": "743.9999976158142,-69.00000029802322 643.4999976158142,-69.00000029802322",
+			"sourceSymbol": "8a7a4ec2-7cdb-410b-9193-98f5fb069ad8",
+			"targetSymbol": "00f64f8a-81b7-42f2-973a-6b3052fecec8",
+			"object": "2d87f712-5e6f-41a9-8f6d-2655b9a21184"
+		},
+		"ab95091e-06b8-4d97-b7a6-654c99148643": {
+			"classDefinition": "com.sap.bpm.wfs.ui.SequenceFlowSymbol",
+			"points": "593.9999976158142,-69.00000029802322 493.4999976158142,-69.00000029802322",
+			"sourceSymbol": "00f64f8a-81b7-42f2-973a-6b3052fecec8",
+			"targetSymbol": "cb874991-bee5-45be-a234-6b4b1f4e85ca",
+			"object": "5a159513-1956-4910-982e-52f4e6fbcf7b"
+		},
+		"b3743b0d-de07-46b4-ad3e-eab95a127963": {
+			"classDefinition": "com.sap.bpm.wfs.ui.SequenceFlowSymbol",
+			"points": "443.9999976158142,-69.00000029802322 343.4999976158142,-69.00000029802322",
+			"sourceSymbol": "cb874991-bee5-45be-a234-6b4b1f4e85ca",
+			"targetSymbol": "bc04f34d-d16b-4cc5-a534-5e2fc213e6a0",
+			"object": "a2b17195-ad52-4202-be2a-c450883727d6"
+		},
+		"6091239b-ae34-4784-b01a-f5556f64c9a4": {
+			"classDefinition": "com.sap.bpm.wfs.ui.SequenceFlowSymbol",
+			"points": "293.9999976158142,-69.00000029802322 193.4999976158142,-69.00000029802322",
+			"sourceSymbol": "bc04f34d-d16b-4cc5-a534-5e2fc213e6a0",
+			"targetSymbol": "08f155c9-80b3-46fe-a9ec-606b3a770980",
+			"object": "518ae065-da3c-406f-8e4b-62a4c3d78cfc"
+		},
+		"1f3ca4b0-cf15-4dff-8664-093992e4e819": {
+			"classDefinition": "com.sap.bpm.wfs.ui.SequenceFlowSymbol",
+			"points": "143.9999976158142,-69.00000029802322 29.49999761581421,-69.00000029802322",
+			"sourceSymbol": "08f155c9-80b3-46fe-a9ec-606b3a770980",
+			"targetSymbol": "53e54950-7757-4161-82c9-afa7e86cff2c",
+			"object": "dbf9e029-7a28-45d9-8c24-180c6f3f9251"
+		},
 		"62d7f4ed-4063-4c44-af8b-39050bd44926": {
 			"classDefinition": "com.sap.bpm.wfs.LastIDs",
 			"maildefinition": 1,
@@ -649,118 +761,6 @@
 			"reference": "/sample-data/smbeatsRules/qualtrics_sample_sbeats.html",
 			"ignoreInvalidRecipients": true,
 			"id": "maildefinition1"
-		},
-		"4ef73666-00b1-4de1-8406-9f15cb143661": {
-			"classDefinition": "com.sap.bpm.wfs.SequenceFlow",
-			"id": "sequenceflow65",
-			"name": "SequenceFlow65",
-			"sourceRef": "27588e98-67d0-41a0-95c3-cb0875ce87ff",
-			"targetRef": "dbcd0575-f1b3-44f8-826a-0cc6f3e712f6"
-		},
-		"8cdc3ea7-e765-4418-ba9e-3fdbbf952ada": {
-			"classDefinition": "com.sap.bpm.wfs.ui.SequenceFlowSymbol",
-			"points": "1175.9999976158142,-69.00000029802322 1009.4999976158142,-69.00000029802322",
-			"sourceSymbol": "0b775856-43cf-473e-8350-7c4d2ef2c5f0",
-			"targetSymbol": "dc56ad04-fdc4-4527-a654-85a5e7b075af",
-			"object": "4ef73666-00b1-4de1-8406-9f15cb143661"
-		},
-		"7c903cfa-049d-4846-9334-0faa7daa6a9f": {
-			"classDefinition": "com.sap.bpm.wfs.SequenceFlow",
-			"id": "sequenceflow66",
-			"name": "SequenceFlow66",
-			"sourceRef": "f7343211-7e7b-45c3-bda6-50d2cd659b81",
-			"targetRef": "27588e98-67d0-41a0-95c3-cb0875ce87ff"
-		},
-		"e7448a6b-20ad-49c3-9b6f-74f555eb670d": {
-			"classDefinition": "com.sap.bpm.wfs.ui.SequenceFlowSymbol",
-			"points": "1175.9999976158142,59.999999701976776 1175.9999976158142,-39.500000298023224",
-			"sourceSymbol": "42b6c7f1-d64b-4772-93c5-a56ea0222cca",
-			"targetSymbol": "0b775856-43cf-473e-8350-7c4d2ef2c5f0",
-			"object": "7c903cfa-049d-4846-9334-0faa7daa6a9f"
-		},
-		"0a8229d1-c861-45c8-8cf4-d2a7550f2c68": {
-			"classDefinition": "com.sap.bpm.wfs.SequenceFlow",
-			"id": "sequenceflow68",
-			"name": "SequenceFlow68",
-			"sourceRef": "dbcd0575-f1b3-44f8-826a-0cc6f3e712f6",
-			"targetRef": "172b80e4-ae00-49ac-9adb-d630176d70ae"
-		},
-		"39498ab5-5f92-418f-a133-8b33f23f868b": {
-			"classDefinition": "com.sap.bpm.wfs.ui.SequenceFlowSymbol",
-			"points": "959.9999976158142,-69.00000029802322 793.4999976158142,-69.00000029802322",
-			"sourceSymbol": "dc56ad04-fdc4-4527-a654-85a5e7b075af",
-			"targetSymbol": "8a7a4ec2-7cdb-410b-9193-98f5fb069ad8",
-			"object": "0a8229d1-c861-45c8-8cf4-d2a7550f2c68"
-		},
-		"2d87f712-5e6f-41a9-8f6d-2655b9a21184": {
-			"classDefinition": "com.sap.bpm.wfs.SequenceFlow",
-			"id": "sequenceflow69",
-			"name": "SequenceFlow69",
-			"sourceRef": "172b80e4-ae00-49ac-9adb-d630176d70ae",
-			"targetRef": "6cce5d66-1275-415e-80f2-51350c73ec63"
-		},
-		"d9ef8035-a683-4663-bdbd-888fa7f35c61": {
-			"classDefinition": "com.sap.bpm.wfs.ui.SequenceFlowSymbol",
-			"points": "743.9999976158142,-69.00000029802322 643.4999976158142,-69.00000029802322",
-			"sourceSymbol": "8a7a4ec2-7cdb-410b-9193-98f5fb069ad8",
-			"targetSymbol": "00f64f8a-81b7-42f2-973a-6b3052fecec8",
-			"object": "2d87f712-5e6f-41a9-8f6d-2655b9a21184"
-		},
-		"5a159513-1956-4910-982e-52f4e6fbcf7b": {
-			"classDefinition": "com.sap.bpm.wfs.SequenceFlow",
-			"id": "sequenceflow70",
-			"name": "SequenceFlow70",
-			"sourceRef": "6cce5d66-1275-415e-80f2-51350c73ec63",
-			"targetRef": "722d42e0-3ec7-4314-bf98-47544347f724"
-		},
-		"ab95091e-06b8-4d97-b7a6-654c99148643": {
-			"classDefinition": "com.sap.bpm.wfs.ui.SequenceFlowSymbol",
-			"points": "593.9999976158142,-69.00000029802322 493.4999976158142,-69.00000029802322",
-			"sourceSymbol": "00f64f8a-81b7-42f2-973a-6b3052fecec8",
-			"targetSymbol": "cb874991-bee5-45be-a234-6b4b1f4e85ca",
-			"object": "5a159513-1956-4910-982e-52f4e6fbcf7b"
-		},
-		"a2b17195-ad52-4202-be2a-c450883727d6": {
-			"classDefinition": "com.sap.bpm.wfs.SequenceFlow",
-			"id": "sequenceflow71",
-			"name": "SequenceFlow71",
-			"sourceRef": "722d42e0-3ec7-4314-bf98-47544347f724",
-			"targetRef": "2b7f9cf0-32ce-4e3c-bb83-2e2af805e152"
-		},
-		"b3743b0d-de07-46b4-ad3e-eab95a127963": {
-			"classDefinition": "com.sap.bpm.wfs.ui.SequenceFlowSymbol",
-			"points": "443.9999976158142,-69.00000029802322 343.4999976158142,-69.00000029802322",
-			"sourceSymbol": "cb874991-bee5-45be-a234-6b4b1f4e85ca",
-			"targetSymbol": "bc04f34d-d16b-4cc5-a534-5e2fc213e6a0",
-			"object": "a2b17195-ad52-4202-be2a-c450883727d6"
-		},
-		"518ae065-da3c-406f-8e4b-62a4c3d78cfc": {
-			"classDefinition": "com.sap.bpm.wfs.SequenceFlow",
-			"id": "sequenceflow72",
-			"name": "SequenceFlow72",
-			"sourceRef": "2b7f9cf0-32ce-4e3c-bb83-2e2af805e152",
-			"targetRef": "8c85ea56-ac22-4d48-98b1-496c6d3dee3a"
-		},
-		"6091239b-ae34-4784-b01a-f5556f64c9a4": {
-			"classDefinition": "com.sap.bpm.wfs.ui.SequenceFlowSymbol",
-			"points": "293.9999976158142,-69.00000029802322 193.4999976158142,-69.00000029802322",
-			"sourceSymbol": "bc04f34d-d16b-4cc5-a534-5e2fc213e6a0",
-			"targetSymbol": "08f155c9-80b3-46fe-a9ec-606b3a770980",
-			"object": "518ae065-da3c-406f-8e4b-62a4c3d78cfc"
-		},
-		"dbf9e029-7a28-45d9-8c24-180c6f3f9251": {
-			"classDefinition": "com.sap.bpm.wfs.SequenceFlow",
-			"id": "sequenceflow73",
-			"name": "SequenceFlow73",
-			"sourceRef": "8c85ea56-ac22-4d48-98b1-496c6d3dee3a",
-			"targetRef": "2798f4e7-bc42-4fad-a248-159095a2f40a"
-		},
-		"1f3ca4b0-cf15-4dff-8664-093992e4e819": {
-			"classDefinition": "com.sap.bpm.wfs.ui.SequenceFlowSymbol",
-			"points": "143.9999976158142,-69.00000029802322 29.49999761581421,-69.00000029802322",
-			"sourceSymbol": "08f155c9-80b3-46fe-a9ec-606b3a770980",
-			"targetSymbol": "53e54950-7757-4161-82c9-afa7e86cff2c",
-			"object": "dbf9e029-7a28-45d9-8c24-180c6f3f9251"
 		}
 	}
 }
