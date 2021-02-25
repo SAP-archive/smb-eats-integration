@@ -71,21 +71,22 @@ In order to enable the APIs, a communication user, communication system and the 
 Please check the following API's documentation giving details about the required Communication scenarios:
 - [Create Sales Order](https://help.sap.com/viewer/19d48293097f4a2589433856b034dfa5/2020.000/en-US/641bd0dc16bf406684ca2c614322c15e.html)
 - [Create Outbound Delivery](https://help.sap.com/viewer/588780cab2774a7ab9fffca3a7f919fe/2102.500/en-US/ab6845012ee148ba9c2694648c2a0685.html)
-- [Billing Document - Create with SD Document Reference](https://help.sap.com/viewer/03c04db2a7434731b7fe21dca77440da/2102.500/en-US/63effdc0e14b4719bc72707672cac1cb.html)
+- [Billing Document - Create with SD Document Reference](https://help.sap.com/viewer/03c04db2a7434731b7fe21dca77440da/2102.500/en-US/63effdc0e14b4719bc72707672cac1cb.html) </br>
 Check this blog if you need explanations on [Setting up Communication Management in SAP S/4HANA Cloud](https://blogs.sap.com/2017/11/09/setting-up-communication-management-in-sap-s4hana-cloud/)
 ##### SAP Business ByDesign
 In order to get the required OData APIs ready to be consumed please follow the blog [SAP Business ByDesign – OData API Examples](https://blogs.sap.com/2019/02/27/sap-business-bydesign-api-usage-samples/) providing a full set of custom OData APIs ready to be downloaded and imported into ByDesign, we have used some the provided APIs in our prototype.
 #### 2. Download the provided Integration Package
  Download the provided Integration Package:
- - For SAP Business ByDesign: SMBEats.zip file from the [cpi-flows github folder](https://github.com/SAP-samples/smb-eats-integration/tree/master/cpi-flows)
  - For SAP S/4 HANA Cloud: S4Eats.zip file from the [cpi-flows github folder](https://github.com/SAP-samples/smb-eats-integration/tree/master/cpi-flows)
+ - For SAP Business ByDesign: SMBEats.zip file from the [cpi-flows github folder](https://github.com/SAP-samples/smb-eats-integration/tree/master/cpi-flows)
 #### 3. Connect to your SAP BTP Integration Tenant and import the provided Integration Package. 
 Follow this [documentation](https://help.sap.com/viewer/368c481cd6954bdfa5d0435479fd4eaf/Cloud/en-US/b6a1a6169ab145aa8d647b2e21c54194.html) if you need help on how to import a CPI package;</br>
-You should get a package containing 3 flows:</br>
+In both cases (SMBEats and S4Eats) you should get a package containing 3 flows:</br>
 ![SMBEats Integration Flows](https://i.imgur.com/31BIywh.png)
 #### 4. Configure your ERP Backend technical user into CPI. 
-Please check section "iii.	Store B1 and/or ByD User Credentials at SAP Cloud Platform Integration tenant" from the [SMB Samples Step by Step guide](https://dam.sap.com/mac/preview/XnOAPs.htm) to get details on how to store ByDesign user credentials in CPI. </br>
-Note: In the provided flows the user is named BYD_ADMIN, if you use a different name you will need to replace it; 
+You need to store your ERP backend technical user credentials into CPI. Please check this [document](https://help.sap.com/viewer/368c481cd6954bdfa5d0435479fd4eaf/Cloud/en-US/6912d63bbbc64aee8bbd4ff10314c60c.html?q=secure%20credential)] for more details.
+You have a sample with instructions at section "iii.	Store B1 and/or ByD User Credentials at SAP Cloud Platform Integration tenant" from the [SMB Samples Step by Step guide](https://dam.sap.com/mac/preview/XnOAPs.htm) to get details on how to store ByDesign user credentials in CPI. </br>
+Note: In the provided flows the user is named BYD_ADMIN or S4_SA, if you use a different name you will need to replace it. 
 #### 5. For SAP Business ByDesign only
 Setup Secure Oubound HTTP Connection by following this [blog](https://blogs.sap.com/2017/06/19/cloud-integration-how-to-setup-secure-outbound-http-connection-using-keystore-monitor/).
 #### 6. Configure your ERP backend server and user.  
@@ -93,7 +94,10 @@ The different parameters to be configured to connect to your specific ERP Backen
 Press the Configure link on the top right of each one of the provided flows:
 ![Configure](https://i.imgur.com/ycHatkG.png)
 A new screen opens where you can configure each one of the Receivers with the corresponding values required for the Connection:
-![SetValues](https://i.imgur.com/ziWlBv2.png)
+For SAP S/4 HANA Cloud:
+![SetValuesS4](https://i.imgur.com/mr8bvse.png)
+For SAP Business ByDesign:
+![SetValuesByD](https://i.imgur.com/ziWlBv2.png)
 #### 7. Deploy the Integration Flows in CPI
 Deploy one by one the 3 Integration Flows part of the package (same 3 flows are part of the ByD and S4 packages):
 ![CreateOrder Integration Flow](https://i.imgur.com/PrQUwvU.png)
