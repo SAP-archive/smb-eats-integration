@@ -26,7 +26,7 @@ This repository is comprised of the workflow definitions and integration flows r
 * Setup your SAP Business Technology Platform Integration Tenant by following [this tutorial](https://developers.sap.com/tutorials/cp-starter-integration-cpi-onboard-subscribe.html). The documentation [Initial Setup of in Cloud Foundry Environment](https://help.sap.com/viewer/368c481cd6954bdfa5d0435479fd4eaf/Cloud/en-US/302b47b11e1749c3aa9478f4123fc216.html) can also help you to understand the whole setup process;
 * Set up Workflow Management as per [this tutorial](https://developers.sap.com/tutorials/cp-starter-ibpm-employeeonboarding-1-setup.html);
 * Configure your [development space](https://triallink.eu10.trial.applicationstudio.cloud.sap) at SAP Business Application Studio so you can import the provided workflow project. Folow step 1 of [this tutorial](https://developers.sap.com/tutorials/cp-workflow-2-create-module-cf.html) to set up your environment correctly;
-* A SAP Business ByDesign test tenant;
+* A SAP Business ByDesign or SAP S/4 HANA Cloud test tenant;
 * A Qualtrics Survey demo tenant.
 
 ## Deployment
