@@ -61,26 +61,44 @@ If you want to test your workflow, browse to the [SAP Business Technology Platfo
 
 ### Integration Flows Deployment
 The communication between Workflow and your ERP Backend is done via Integration Flows implemented in your Integration Tenant (CPI).</br>
-The steps to follow are:
-1. Setup your ERP Backend OData APIs. </br>
-In this specific prototype sample we are connecting to SAP Business ByDesign. In order to get the required OData APIs ready to be consumed please follow the blog [SAP Business ByDesign – OData API Examples](https://blogs.sap.com/2019/02/27/sap-business-bydesign-api-usage-samples/) providing a full set of custom OData APIs ready to be downloaded and imported into ByDesign, we have used some the provided APIs in our prototype.
-2. Download the provided Integration Package SMBEats.zip file from the [cpi-flows github folder](https://github.com/SAP-samples/smb-eats-integration/tree/master/cpi-flows);
-3. Connect to your SAP BTP Integration Tenant and import the provided Integration Package. </br>
+The workflow is ERP agnostic and calling CPI flows in order to get the documents created at the ERP. Workflow just needs to change a context variable in order to select the required ERP.</br>
+
+For our prototype we have considered 2 ERP backends: SAP Business ByDesign and SAP S/4 HANA Cloud. The steps to follow are the same, just some of them will be dependent of course of the ERP backend chosen:
+#### 1. Setup your ERP Backend OData APIs. 
+##### SAP S/4 HANA Cloud
+SAP S/4 HANA Cloud is providing OData and SOAP APIs. 
+In order to enable the APIs, a communication user, communication system and the communication arrangement need to be created.
+Please check the following API's documentation giving details about the required Communication scenarios:
+- [Create Sales Order](https://help.sap.com/viewer/19d48293097f4a2589433856b034dfa5/2020.000/en-US/641bd0dc16bf406684ca2c614322c15e.html)
+- [Create Outbound Delivery](https://help.sap.com/viewer/588780cab2774a7ab9fffca3a7f919fe/2102.500/en-US/ab6845012ee148ba9c2694648c2a0685.html)
+- [Billing Document - Create with SD Document Reference](https://help.sap.com/viewer/03c04db2a7434731b7fe21dca77440da/2102.500/en-US/63effdc0e14b4719bc72707672cac1cb.html)
+Check this blog if you need explanations on [Setting up Communication Management in SAP S/4HANA Cloud](https://blogs.sap.com/2017/11/09/setting-up-communication-management-in-sap-s4hana-cloud/)
+##### SAP Business ByDesign
+In order to get the required OData APIs ready to be consumed please follow the blog [SAP Business ByDesign – OData API Examples](https://blogs.sap.com/2019/02/27/sap-business-bydesign-api-usage-samples/) providing a full set of custom OData APIs ready to be downloaded and imported into ByDesign, we have used some the provided APIs in our prototype.
+#### 2. Download the provided Integration Package
+ Download the provided Integration Package:
+ - For SAP Business ByDesign: SMBEats.zip file from the [cpi-flows github folder](https://github.com/SAP-samples/smb-eats-integration/tree/master/cpi-flows)
+ - For SAP S/4 HANA Cloud: S4Eats.zip file from the [cpi-flows github folder](https://github.com/SAP-samples/smb-eats-integration/tree/master/cpi-flows)
+#### 3. Connect to your SAP BTP Integration Tenant and import the provided Integration Package. 
 Follow this [documentation](https://help.sap.com/viewer/368c481cd6954bdfa5d0435479fd4eaf/Cloud/en-US/b6a1a6169ab145aa8d647b2e21c54194.html) if you need help on how to import a CPI package;</br>
 You should get a package containing 3 flows:</br>
 ![SMBEats Integration Flows](https://i.imgur.com/31BIywh.png)
-4. Configure your ERP Backend technical user into CPI. Please check section "iii.	Store B1 and/or ByD User Credentials at SAP Cloud Platform Integration tenant" from the [SMB Samples Step by Step guide](https://dam.sap.com/mac/preview/XnOAPs.htm) to get details on how to store ByDesign user credentials in CPI. </br>
+#### 4. Configure your ERP Backend technical user into CPI. 
+Please check section "iii.	Store B1 and/or ByD User Credentials at SAP Cloud Platform Integration tenant" from the [SMB Samples Step by Step guide](https://dam.sap.com/mac/preview/XnOAPs.htm) to get details on how to store ByDesign user credentials in CPI. </br>
 Note: In the provided flows the user is named BYD_ADMIN, if you use a different name you will need to replace it; 
-5. Setup Secure Oubound HTTP Connection by following this [blog](https://blogs.sap.com/2017/06/19/cloud-integration-how-to-setup-secure-outbound-http-connection-using-keystore-monitor/).
-6. Configure your ERP backend server and user.  </br>
+#### 5. For SAP Business ByDesign only
+Setup Secure Oubound HTTP Connection by following this [blog](https://blogs.sap.com/2017/06/19/cloud-integration-how-to-setup-secure-outbound-http-connection-using-keystore-monitor/).
+#### 6. Configure your ERP backend server and user.  
 The different parameters to be configured to connect to your specific ERP Backend have been defined in the flows using the [Externalization](https://blogs.sap.com/2017/06/20/externalizing-parameters-using-sap-cloud-platform-integrations-web-application/) feature.<br>
 Press the Configure link on the top right of each one of the provided flows:
 ![Configure](https://i.imgur.com/ycHatkG.png)
 A new screen opens where you can configure each one of the Receivers with the corresponding values required for the Connection:
 ![SetValues](https://i.imgur.com/ziWlBv2.png)
-7. Deploy one by one the 3 Integration Flows part of the package:
+#### 7. Deploy the Integration Flows in CPI
+Deploy one by one the 3 Integration Flows part of the package (same 3 flows are part of the ByD and S4 packages):
 ![CreateOrder Integration Flow](https://i.imgur.com/PrQUwvU.png)
-8. (Optional) If you want to learn a more about the Integration Suite don't hesitate to check this [blog](https://dam.sap.com/mac/preview/XnOAPs.htm) that provides samples, a step by step guide and references to available materials.
+#### 8. (Optional) Extra documentation
+If you want to learn a more about the Integration Suite don't hesitate to check this [blog](https://dam.sap.com/mac/preview/XnOAPs.htm) that provides samples, a step by step guide and references to available materials.
 
 
 ## Support and Contributions
