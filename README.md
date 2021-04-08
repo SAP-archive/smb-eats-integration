@@ -26,7 +26,7 @@ This repository is comprised of the workflow definitions and integration flows r
 * Setup your SAP Business Technology Platform Integration Tenant by following [this tutorial](https://developers.sap.com/tutorials/cp-starter-integration-cpi-onboard-subscribe.html). The documentation [Initial Setup of in Cloud Foundry Environment](https://help.sap.com/viewer/368c481cd6954bdfa5d0435479fd4eaf/Cloud/en-US/302b47b11e1749c3aa9478f4123fc216.html) can also help you to understand the whole setup process;
 * Set up Workflow Management as per [this tutorial](https://developers.sap.com/tutorials/cp-starter-ibpm-employeeonboarding-1-setup.html);
 * Configure your [development space](https://triallink.eu10.trial.applicationstudio.cloud.sap) at SAP Business Application Studio so you can import the provided workflow project. Folow step 1 of [this tutorial](https://developers.sap.com/tutorials/cp-workflow-2-create-module-cf.html) to set up your environment correctly;
-* A SAP Business ByDesign or SAP S/4 HANA Cloud test tenant;
+* A SAP Business ByDesign or SAP Business One or SAP S/4 HANA Cloud test tenant;
 * A Qualtrics Survey demo tenant.
 
 ## Deployment
@@ -63,7 +63,7 @@ If you want to test your workflow, browse to the [SAP Business Technology Platfo
 The communication between Workflow and your ERP Backend is done via Integration Flows implemented in your Integration Tenant (CPI).</br>
 The workflow is ERP agnostic and calling CPI flows in order to get the documents created at the ERP. Workflow just needs to change a context variable in order to select the required ERP.</br>
 
-For our prototype we have considered 2 ERP backends: SAP Business ByDesign and SAP S/4 HANA Cloud. The steps to follow are the same, just some of them will be dependent of course of the ERP backend chosen:
+For our prototype we have considered 3 ERP backends: SAP Business One, SAP Business ByDesign and SAP S/4 HANA Cloud. The steps to follow are the same, just some of them will be dependent of course of the ERP backend chosen:
 #### 1. Setup your ERP Backend OData APIs. 
 ##### SAP S/4 HANA Cloud
 SAP S/4 HANA Cloud is providing OData and SOAP APIs. 
@@ -75,10 +75,12 @@ Please check the following API's documentation giving details about the required
 Check this blog if you need explanations on [Setting up Communication Management in SAP S/4HANA Cloud](https://blogs.sap.com/2017/11/09/setting-up-communication-management-in-sap-s4hana-cloud/)
 ##### SAP Business ByDesign
 In order to get the required OData APIs ready to be consumed please follow the blog [SAP Business ByDesign – OData API Examples](https://blogs.sap.com/2019/02/27/sap-business-bydesign-api-usage-samples/) providing a full set of custom OData APIs ready to be downloaded and imported into ByDesign, we have used some the provided APIs in our prototype.
+##### SAP Business One
+In the case of SAP Business One we are consuming the OData v4 APIs provided by SAP Business One Service Layer. There is no preconfiguration required in order to access the APIs, just make sure the corresponding ports are open.
 #### 2. Download the provided Integration Package
  Download the provided Integration Package:
  - For SAP S/4 HANA Cloud: S4Eats.zip file from the [cpi-flows github folder](https://github.com/SAP-samples/smb-eats-integration/tree/master/cpi-flows)
- - For SAP Business ByDesign: SMBEats.zip file from the [cpi-flows github folder](https://github.com/SAP-samples/smb-eats-integration/tree/master/cpi-flows)
+ - For SAP Business ByDesign and SAP Business One: SMBEats.zip file from the [cpi-flows github folder](https://github.com/SAP-samples/smb-eats-integration/tree/master/cpi-flows)
 #### 3. Connect to your SAP BTP Integration Tenant and import the provided Integration Package. 
 Follow this [documentation](https://help.sap.com/viewer/368c481cd6954bdfa5d0435479fd4eaf/Cloud/en-US/b6a1a6169ab145aa8d647b2e21c54194.html) if you need help on how to import a CPI package;</br>
 In both cases (SMBEats and S4Eats) you should get a package containing 3 flows:</br>
@@ -96,6 +98,8 @@ In the case of S4Eats for SAP S/4 HANA Cloud:</br>
 ![SetValuesS4](https://i.imgur.com/mr8bvse.png)
 In the case of SMBEats for SAP Business ByDesign:
 ![SetValuesByD](https://i.imgur.com/ziWlBv2.png)
+In the case of SMBEats for SAP Business One:
+![SetValuesB1](https://i.imgur.com/jtKAVGZ.png)
 #### 6. Deploy the Integration Flows in CPI
 Deploy one by one the 3 Integration Flows part of the package (same 3 flows are part of the ByD and S4 packages):
 ![CreateOrder Integration Flow](https://i.imgur.com/PrQUwvU.png)
