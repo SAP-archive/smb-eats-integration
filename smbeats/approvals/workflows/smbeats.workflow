@@ -215,6 +215,12 @@
 			"name": "Create Customer Invoice in the core ERP",
 			"documentation": "Create Customer Invoice in the core ERP"
 		},
+		"d55c6f67-29d7-4020-bcdc-a243ed89f629": {
+			"classDefinition": "com.sap.bpm.wfs.ScriptTask",
+			"reference": "/scripts/smbeats/checkERP.js",
+			"id": "scripttask2",
+			"name": "Check core ERP "
+		},
 		"c6b99f32-5fe6-4ab6-b60a-80fba1b9ae0f": {
 			"classDefinition": "com.sap.bpm.wfs.SequenceFlow",
 			"id": "sequenceflow1",
@@ -270,6 +276,20 @@
 			"name": "SequenceFlow21",
 			"sourceRef": "2b7f9cf0-32ce-4e3c-bb83-2e2af805e152",
 			"targetRef": "8c85ea56-ac22-4d48-98b1-496c6d3dee3a"
+		},
+		"4d6ca47a-1205-4893-8463-78200b2db641": {
+			"classDefinition": "com.sap.bpm.wfs.SequenceFlow",
+			"id": "sequenceflow22",
+			"name": "SequenceFlow22",
+			"sourceRef": "f7343211-7e7b-45c3-bda6-50d2cd659b81",
+			"targetRef": "d55c6f67-29d7-4020-bcdc-a243ed89f629"
+		},
+		"f994017e-28e1-423d-8d9e-40066a69eeb6": {
+			"classDefinition": "com.sap.bpm.wfs.SequenceFlow",
+			"id": "sequenceflow23",
+			"name": "SequenceFlow23",
+			"sourceRef": "d55c6f67-29d7-4020-bcdc-a243ed89f629",
+			"targetRef": "27588e98-67d0-41a0-95c3-cb0875ce87ff"
 		},
 		"42fa7a2d-c526-4a02-b3ba-49b5168ba644": {
 			"classDefinition": "com.sap.bpm.wfs.ui.Diagram",
@@ -438,6 +458,28 @@
 			"targetSymbol": "08f155c9-80b3-46fe-a9ec-606b3a770980",
 			"object": "8faf9759-2ef9-4876-928f-2a03b3f70acb"
 		},
+		"a53a94a3-6844-4041-baee-3dfc2866f671": {
+			"classDefinition": "com.sap.bpm.wfs.ui.ScriptTaskSymbol",
+			"x": 244,
+			"y": 12,
+			"width": 100,
+			"height": 60,
+			"object": "d55c6f67-29d7-4020-bcdc-a243ed89f629"
+		},
+		"bff1fbd1-4d2a-4b6f-a4ad-eb3b4d3ec3be": {
+			"classDefinition": "com.sap.bpm.wfs.ui.SequenceFlowSymbol",
+			"points": "194,42 194,-58 244,-58 244,42",
+			"sourceSymbol": "42b6c7f1-d64b-4772-93c5-a56ea0222cca",
+			"targetSymbol": "a53a94a3-6844-4041-baee-3dfc2866f671",
+			"object": "4d6ca47a-1205-4893-8463-78200b2db641"
+		},
+		"59c4481d-9ca8-4df8-bd71-def0479429ca": {
+			"classDefinition": "com.sap.bpm.wfs.ui.SequenceFlowSymbol",
+			"points": "344,42 394,42",
+			"sourceSymbol": "a53a94a3-6844-4041-baee-3dfc2866f671",
+			"targetSymbol": "0b775856-43cf-473e-8350-7c4d2ef2c5f0",
+			"object": "f994017e-28e1-423d-8d9e-40066a69eeb6"
+		},
 		"62d7f4ed-4063-4c44-af8b-39050bd44926": {
 			"classDefinition": "com.sap.bpm.wfs.LastIDs",
 			"maildefinition": 1,
@@ -459,48 +501,6 @@
 			"reference": "/sample-data/smbeats/qualtrics_sample_sbeats.html",
 			"ignoreInvalidRecipients": true,
 			"id": "maildefinition1"
-		},
-		"d55c6f67-29d7-4020-bcdc-a243ed89f629": {
-			"classDefinition": "com.sap.bpm.wfs.ScriptTask",
-			"reference": "/scripts/smbeats/checkERP.js",
-			"id": "scripttask2",
-			"name": "Check core ERP "
-		},
-		"a53a94a3-6844-4041-baee-3dfc2866f671": {
-			"classDefinition": "com.sap.bpm.wfs.ui.ScriptTaskSymbol",
-			"x": 244,
-			"y": 12,
-			"width": 100,
-			"height": 60,
-			"object": "d55c6f67-29d7-4020-bcdc-a243ed89f629"
-		},
-		"4d6ca47a-1205-4893-8463-78200b2db641": {
-			"classDefinition": "com.sap.bpm.wfs.SequenceFlow",
-			"id": "sequenceflow22",
-			"name": "SequenceFlow22",
-			"sourceRef": "f7343211-7e7b-45c3-bda6-50d2cd659b81",
-			"targetRef": "d55c6f67-29d7-4020-bcdc-a243ed89f629"
-		},
-		"bff1fbd1-4d2a-4b6f-a4ad-eb3b4d3ec3be": {
-			"classDefinition": "com.sap.bpm.wfs.ui.SequenceFlowSymbol",
-			"points": "194,42 244,42",
-			"sourceSymbol": "42b6c7f1-d64b-4772-93c5-a56ea0222cca",
-			"targetSymbol": "a53a94a3-6844-4041-baee-3dfc2866f671",
-			"object": "4d6ca47a-1205-4893-8463-78200b2db641"
-		},
-		"f994017e-28e1-423d-8d9e-40066a69eeb6": {
-			"classDefinition": "com.sap.bpm.wfs.SequenceFlow",
-			"id": "sequenceflow23",
-			"name": "SequenceFlow23",
-			"sourceRef": "d55c6f67-29d7-4020-bcdc-a243ed89f629",
-			"targetRef": "27588e98-67d0-41a0-95c3-cb0875ce87ff"
-		},
-		"59c4481d-9ca8-4df8-bd71-def0479429ca": {
-			"classDefinition": "com.sap.bpm.wfs.ui.SequenceFlowSymbol",
-			"points": "344,42 394,42",
-			"sourceSymbol": "a53a94a3-6844-4041-baee-3dfc2866f671",
-			"targetSymbol": "0b775856-43cf-473e-8350-7c4d2ef2c5f0",
-			"object": "f994017e-28e1-423d-8d9e-40066a69eeb6"
 		}
 	}
 }

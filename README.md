@@ -1,15 +1,15 @@
 [![License: Apache2](https://img.shields.io/badge/License-Apache2-green.svg)](https://opensource.org/licenses/Apache-2.0)
 [![REUSE status](https://api.reuse.software/badge/github.com/sap-samples/smb-eats-integration)](https://api.reuse.software/info/github.com/sap-samples/smb-eats-integration)
 
-# SMB Eats Integration
+# SMB Eats Integration - extended with Business Rules
 *Workflow and ERP integration for the [SMB Eats prototype](https://github.com/SAP-samples/smb-eats-backend)*
 
-[Read full blog post here](https://blogs.sap.com/2021/02/05/sap-workflow-management-and-loosely-coupled-architecture/)
+[Read full blog post here](https://blogs.sap.com/2021/02/24/embedding-decisions-with-sap-business-rules-services/)
 
 # Description
-This repository is comprised of the workflow definitions and integration flows required by the [smb-eats-backend](https://github.com/SAP-samples/smb-eats-backend) sample. It orchestrates the following steps:
+This repository is comprised of the workflow definitions and integration flows required by the [smb-eats-backend](https://github.com/SAP-samples/smb-eats-backend) sample, and extended with business rules. It orchestrates the following steps:
 
-![worfklow process](https://i.imgur.com/mouLjiT.png "Workflow process on the Business Application Studio")
+![worfklow process](https://blogs.sap.com/wp-content/uploads/2021/02/2021-02-23_12-33-19-1.jpg "Workflow process on the Business Application Studio")
 
 1. Pizza shop manager needs to approve a customer's order request;
 2. Sales Order is posted to the SAP Cloud ERP;

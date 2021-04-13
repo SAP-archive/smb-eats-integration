@@ -1,0 +1,10 @@
+#clientSecret=
+#
+#Tue Feb 23 17:51:25 UTC 2021
+clientId=
+URL=https\://bpmruleruntime.cfapps.eu10.hana.ondemand.com/rules-service
+Name=BRULES
+ProxyType=Internet
+tokenServiceURL=https\://2bffd846trial.authentication.eu10.hana.ondemand.com/oauth/token?grant_type\=client_credentials
+Type=HTTP
+Authentication=OAuth2ClientCredentials
