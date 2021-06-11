@@ -41,15 +41,7 @@ Clone this repository using the Business Application Studio;
   <img src="https://i.imgur.com/tfk5GNG.png">
 </p>
 
-Then go ahead, build and deploy the router application for the workflow;
-<p align="center">
-  <img src="https://i.imgur.com/yeBYHlp.png">
-</p>
-<p align="center">
-  <img src="https://i.imgur.com/dMgTczy.png">
-</p>
-
-Finally build and deploy the workflow itself;
+Then go ahead, build and deploy the workflow itself;
 <p align="center">
   <img src="https://i.imgur.com/0egtyOb.png">
 </p>
