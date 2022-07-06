@@ -79,7 +79,7 @@ In both cases (SMBEats and S4Eats) you should get a package containing 3 flows:<
 ![SMBEats Integration Flows](https://i.imgur.com/31BIywh.png)
 #### 4. Configure your ERP Backend technical user into CPI. 
 You need to store your ERP backend technical user credentials into CPI. Please check this [document](https://help.sap.com/viewer/368c481cd6954bdfa5d0435479fd4eaf/Cloud/en-US/6912d63bbbc64aee8bbd4ff10314c60c.html?q=secure%20credential) for more details.</br>
-You can also find a sample with instructions at section "iii.	Store B1 and/or ByD User Credentials at SAP Cloud Platform Integration tenant" from the [SMB Samples Step by Step guide](https://dam.sap.com/mac/preview/XnOAPs.htm) to get details on how to store ByDesign user credentials in CPI. </br>
+You can also find a sample with instructions at section "iii.	Store B1 and/or ByD User Credentials at SAP Business Technology Platform Integration tenant" from the [SMB Samples Step by Step guide](https://dam.sap.com/mac/preview/XnOAPs.htm) to get details on how to store ByDesign user credentials in CPI. </br>
 Note: In the provided flows the user is named BYD_ADMIN or S4_SA, if you use a different name you will need to replace it. 
 #### 5. Configure your ERP backend server and user.  
 The different parameters to be configured to connect to your specific ERP Backend have been defined in the flows using the [Externalization](https://blogs.sap.com/2017/06/20/externalizing-parameters-using-sap-cloud-platform-integrations-web-application/) feature.<br>
